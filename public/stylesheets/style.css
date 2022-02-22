@@ -49,3 +49,28 @@ align-items: center; */
  letter-spacing: 4px;
  padding-top: 10px;
 }
+.mild{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.social li{
+  list-style: none;
+  font-size: 24px;
+}
+.social{
+  padding-top: 16px;
+}
+.facebook{
+  color: 	#4267B2;
+}
+.twitter{
+  color: 	#1DA1F2;
+}
+.pinterest{
+  color: 	#E60023;
+}
+.dribbble{
+  color: 	#ea4c89;
+}
