@@ -74,3 +74,96 @@ align-items: center; */
 .dribbble{
   color: 	#ea4c89;
 }
+
+
+/*
+nav ul{
+  display: flex;
+  list-style: none;
+  gap: 24px;
+  align-content: center;
+  /* justify-content: center; */
+/* } */
+/* nav ul li{
+  display: inline-block;
+}
+nav ul li a{
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+nav{ */
+  /* padding-left: 100px;
+  padding-top: 60px;
+}
+nav a:link,
+nav a:visited{
+  color: #525050;
+}
+
+nav a:hover,
+nav a:active{
+  border-bottom: 2px solid #ea4c89;
+} */
+
+
+
+nav {
+  width: 80%;
+  margin: 0 auto;
+  background: #fff;
+  padding: 50px 0;
+
+}
+nav ul {
+  list-style: none;
+  text-align: center;
+}
+nav ul li {
+  display: inline-block;
+}
+nav ul li a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: #aaa;
+  /* font-weight: 800;   */
+  text-transform: uppercase;
+  margin: 0 10px;
+}
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+  transition: all .5s;
+}
+nav ul li a:hover {
+  color: #ec5e95;
+}
+
+
+/* stroke */
+nav ul li a
+ {
+  position: relative;
+}
+nav ul li a:after
+{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: #ea4c89;
+  height: 1px;
+}
+nav ul li a:hover:after {
+  width: 100%;
+}
+.hero-img img{
+  width: 100%;
+  height: 448px;
+}
