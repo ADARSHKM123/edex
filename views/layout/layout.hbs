@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edex Store</title>
+      <link rel="shortcut icon" type="images/png" href="images/edex store.png" />
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="top-header">
+                <p class="vertical-text">THE</p>
+                <h1 class="logo">Edex Store</h1>
+            </div>
+            <div class="botom-header">
+                <p>The best supermarket</p>
+            </div>
+            <div class="social">
+                <ul class="mild Social-Media-Icon">
+                    <li><a href="#" class="icon facebook">
+                            <ion-icon name="logo-facebook"></ion-icon><span></span>
+                        </a></li>
+                    <li><a href="#" class="icon twitter">
+                            <ion-icon name="logo-twitter"></ion-icon><span></span>
+                        </a></li>
+                    <li><a href="#" class="icon pinterest">
+                            <ion-icon name="logo-pinterest"></ion-icon><span></span>
+                        </a></li>
+                    <li><a href="#" class="icon dribbble">
+                            <ion-icon name="logo-dribbble"></ion-icon><span></span>
+                        </a></li>
+                </ul>
+            </div>
+            <nav>
+                <ul>
+                    {{#if admin}}
+                    {{>admin-header}}
+                    {{else}}
+                    {{>user-header}}
+                    {{/if}}
+                    <li><a href="">Kitchen</a></li>
+                    <li><a href="">Personal Care</a></li>
+                    <li><a href="">Household</a></li>
+                    <li><a href="">Contact US</a></li>
+                </ul>
+            </nav>
+        </header>
+
+    </div>
+</body>
+
+</html>
+
+{{{body}}}

@@ -1,5 +1,5 @@
 
 exports.home = (req,res,next)=>{
-    res.render('index');
+    res.render('index',{admin:false});
 }
 
