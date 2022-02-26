@@ -2,60 +2,137 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edex Store</title>
-      <link rel="shortcut icon" type="images/png" href="images/edex store.png" />
-    <link rel="stylesheet" href="stylesheets/style.css">
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Edex Store</title>
+	<link rel="shortcut icon" type="images/png" href="images/edex store.png" />
+	<link rel="stylesheet" href="stylesheets/style.css">
+	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+	<script src="javascripts/style.js"></script>
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <div class="top-header">
-                <p class="vertical-text">THE</p>
-                <h1 class="logo">Edex Store</h1>
-            </div>
-            <div class="botom-header">
-                <p>The best supermarket</p>
-            </div>
-            <div class="social">
-                <ul class="mild Social-Media-Icon">
-                    <li><a href="#" class="icon facebook">
-                            <ion-icon name="logo-facebook"></ion-icon><span></span>
-                        </a></li>
-                    <li><a href="#" class="icon twitter">
-                            <ion-icon name="logo-twitter"></ion-icon><span></span>
-                        </a></li>
-                    <li><a href="#" class="icon pinterest">
-                            <ion-icon name="logo-pinterest"></ion-icon><span></span>
-                        </a></li>
-                    <li><a href="#" class="icon dribbble">
-                            <ion-icon name="logo-dribbble"></ion-icon><span></span>
-                        </a></li>
-                </ul>
-            </div>
-            <nav>
-                <ul>
-                    {{#if admin}}
-                    {{>admin-header}}
-                    {{else}}
-                    {{>user-header}}
-                    {{/if}}
-                    <li><a href="">Kitchen</a></li>
-                    <li><a href="">Personal Care</a></li>
-                    <li><a href="">Household</a></li>
-                    <li><a href="">Contact US</a></li>
-                </ul>
-            </nav>
-        </header>
+	<div class="container">
+		<header>
+			<div class="top-header">
+				<p class="vertical-text">THE</p>
+				<h1 class="logo">Edex Store</h1>
+			</div>
+			<div class="botom-header">
+				<p>The best supermarket</p>
+			</div>
+			<div class="social">
+				<ul class="mild Social-Media-Icon">
+					<li><a href="#" class="icon facebook">
+							<ion-icon name="logo-facebook"></ion-icon><span></span>
+						</a></li>
+					<li><a href="#" class="icon twitter">
+							<ion-icon name="logo-twitter"></ion-icon><span></span>
+						</a></li>
+					<li><a href="#" class="icon pinterest">
+							<ion-icon name="logo-pinterest"></ion-icon><span></span>
+						</a></li>
+					<li><a href="#" class="icon dribbble">
+							<ion-icon name="logo-dribbble"></ion-icon><span></span>
+						</a></li>
+				</ul>
+			</div>
+			<nav>
+				<ul>
+					{{#if admin}}
+					{{>admin-header}}
+					{{else}}
+					{{>user-header}}
+					{{/if}}
+					<li><a href="">Kitchen</a></li>
+					<li><a href="">Personal Care</a></li>
+					<li><a href="">Household</a></li>
+					<li><a href="">Contact US</a></li>
+					<li><a href="">sign Up</a></li>
+					<li><a href="">Login</a></li>
+				</ul>
+			</nav>
+		</header>
 
-    </div>
+	</div>
 </body>
 
-</html>
-
 {{{body}}}
+
+<footer>
+	<div class="footer">
+		<div class="container">
+			<div class="footer-about">
+				<h3>About Us</h3>
+				<p>Nam libero tempore, cum soluta nobis est eligendi
+					optio cumque nihil impedit quo minus id quod maxime
+					placeat facere possimus.</p>
+			</div>
+			<div class=" footer-menu ">
+				<h3>Menu</h3>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="kitchen.html">Kitchen</a></li>
+					<li><a href="care.html">Personal Care</a></li>
+					<li><a href="hold.html">Household</a></li>
+					<li><a href="codes.html">Short Codes</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+			</div>
+			<div class=" footer-customer ">
+				<h3>Customer Services</h3>
+				<ul>
+					<li><a href="shipping.html">Shipping</a></li>
+					<li><a href="terms.html">Terms & Conditions</a></li>
+					<li><a href="faqs.html">Faqs</a></li>
+					<li><a href="contact.html">Contact</a></li>
+					<li><a href="offer.html">Online Shopping</a></li>
+
+				</ul>
+			</div>
+			<div class="footer-account">
+				<h3>My Account</h3>
+				<ul>
+					<li><a href="login.html">Login</a></li>
+					<li><a href="register.html">Register</a></li>
+					<li><a href="wishlist.html">Wishlist</a></li>
+
+				</ul>
+			</div>
+			<div class="clearfix"></div>
+			{{!-- <div class="footer-bottom">
+				<h2><a href="index.html"><b>T<br>H<br>E</b>Big Store<span>The Best Supermarket</span></a></h2>
+				<p class="fo-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+					incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+					ullamco laboris</p>
+				<ul class="social-fo">
+					<li><a href="#" class=" face"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+					<li><a href="#" class=" twi"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+					<li><a href="#" class=" pin"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+					<li><a href="#" class=" dri"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+				</ul>
+				<div class=" address">
+					<div class="col-md-4 fo-grid1">
+						<p><i class="fa fa-home" aria-hidden="true"></i>12K Street , 45 Building Road Canada.</p>
+					</div>
+					<div class="col-md-4 fo-grid1">
+						<p><i class="fa fa-phone" aria-hidden="true"></i>+1234 758 839 , +1273 748 730</p>
+					</div>
+					<div class="col-md-4 fo-grid1">
+						<p><a href="mailto:info@example.com"><i class="fa fa-envelope-o"
+									aria-hidden="true"></i>info@example1.com</a></p>
+					</div>
+					<div class="clearfix"></div>
+
+				</div>
+			</div>
+			<div class="copy-right">
+				<p> &copy; 2016 Big store. All Rights Reserved | Design by <a>Adarsh</a></p>
+			</div> --}}
+		</div>
+	</div>
+</footer>
+
+</html>

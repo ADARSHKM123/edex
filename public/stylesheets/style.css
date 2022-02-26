@@ -114,11 +114,11 @@ nav {
   margin: 0 auto;
   background: #fff;
   padding: 50px 0;
-
 }
 nav ul {
   list-style: none;
   text-align: center;
+  background-color: #96969623;
 }
 nav ul li {
   display: inline-block;
@@ -169,8 +169,6 @@ nav ul li a:hover:after {
   justify-content: center;
   align-items: center;
 
-
-  
 }
 .hero-img img{
  width: 40%;
@@ -178,49 +176,120 @@ nav ul li a:hover:after {
 }
 
 .main-content{
-  display: flex;
-  justify-content: center;
   height: 100vh;
   padding-top: 60px;
 }
-
-
-
-/* 
-.image-fader img {
-  animation-name: imagefade;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-duration: 8s;
-} */
-
-/* @keyframes imagefade {
-  0% {
-    opacity:0;
-  }
-  17% {
-    opacity:0;
-  }
-  25% {
-    opacity:0;
-  }
-  92% {
-    opacity:0;
-  }
-  100% {
-    opacity:0;
-  }
+.block-el{
+  justify-content: center;
+  display: flex;
+  gap: 34px;
 }
 
-.image-fader img:nth-of-type(1) {
-  animation-delay: 6s;
+.blockie1{
+  position: relative;
 }
-.image-fader img:nth-of-type(2) {
-  animation-delay: 4s;
+.blockie2{
+  position: relative;
 }
-.image-fader img:nth-of-type(3) {
-  animation-delay: 2s;
+.block1{
+  width: 669px;
+  height: 250px;
+  
 }
-.image-fader img:nth-of-type(4) {
-  animation-delay: 0;
-} */
+.block2{
+  width: 669px;
+  height: 250px;
+
+}
+.tag{
+  width: 257px;
+  height: 248px;
+  padding: 46px;
+  position: absolute;
+  top: 2px;
+  right: 1px;
+}
+.tag1{
+  background-color: #FCA19B;
+}
+.tag2{
+  background-color: #FDE64F;
+}
+.tag h3{
+  font-size: 26px;
+  font-style: italic;
+}
+.tag p{
+  font-size: 25px;
+  padding-top: 10px;
+}
+.buy-now-link{
+
+}
+.tag a {
+  background-color: rgb(247, 172, 11);
+  color: white;
+  padding: 7px 23px;
+  text-decoration: none;
+  border-radius: 11px;
+  font-weight: 500;
+}
+.buy{
+  padding-top: 20px;
+}
+
+.tag1 a:link,
+.tag1 a:visited {
+ background-color: #fe6d30;
+}
+.tag2 a:link,
+.tag2 a:visited {
+ background-color: #f4a602;
+}
+.tag a:hover,
+.tag a:active {
+ background-color: #89c74a;
+}
+.products-show{
+  height: 100vh;
+}
+
+
+/* Footer */
+footer{
+  width: 100%;
+  height: auto;
+  background-color: rgb(90, 90, 90);
+}
+
+
+footer .container{
+  width: 1250px;
+  height: auto;
+  display: flex;
+  padding: 10px;
+  
+}
+footer .footer-about{
+  width: 300px;
+  flex-grow: 1
+}
+
+footer .footer-menu{
+  flex-grow: 1
+}
+
+footer .footer-customer{
+  flex-grow: 1
+}
+footer .footer-account{
+  flex-grow: 1
+}
+footer .container li{
+  list-style: none;
+
+}
+footer .container li a{
+  text-decoration: none;
+  color: #fff;
+}
