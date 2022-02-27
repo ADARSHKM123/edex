@@ -106,6 +106,7 @@ nav ul li a:before {
 }
 nav ul li a:hover {
   color: #ee8105;
+  text-decoration: none;
 }
 /* #ec5e95 */
 
@@ -168,7 +169,7 @@ header span .login{
 }
 
 .main-content{
-  height: 100vh;
+  height: auto;
   padding-top: 60px;
 }
 .block-el{
@@ -241,6 +242,8 @@ header span .login{
 .tag a:hover,
 .tag a:active {
  background-color: #89c74a;
+ text-decoration: none;
+ color: #fff;
 }
 .products-show{
   height: 100vh;
@@ -359,6 +362,7 @@ footer{
   width: 100%;
   height: auto;
   background-color: #353535;
+  margin-top: 100px;
 }
 
 
@@ -464,4 +468,25 @@ footer ul li{
 }
 .copy-right p {
   color: rgb(124, 122, 122);
+}
+.card-container{
+  width: 300rem;
+  height: auto;
+  padding-top: 100px;
+  display: flex;
+  margin-left: 25%;
+  gap: 100px;
+  /* align-items: center; */
+  /* justify-content: center; */
+
+}
+.card-container p{
+  margin: 0 auto;
+  padding-top: 10px;
+}
+.cards-show h2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 100px;
 }
