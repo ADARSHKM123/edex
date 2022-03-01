@@ -7,8 +7,15 @@ const productController = require('../Controllers/productController.js');
 router
 .route('/')
 .get(productController.home)
-.post(productController.addProduct);
+.post(productController.addProduct)
+
+router
+.route('/:id')
+.get(productController.getProduct)
+.patch(productController.updateProduct)
+.delete(productController.deleteProduct)
+
 
 
 module.exports = router;
-  
+   

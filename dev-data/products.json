@@ -69,7 +69,7 @@
   "height": 450,
   "width": 301,
   "price": 27.35,
-  "rating": 0
+  "rating": 2
 }, {
   "name": "Watermelon",
   "category": "fruit",
@@ -105,7 +105,7 @@
   "height": 600,
   "width": 399,
   "price": 14.77,
-  "rating": 0
+  "rating": 3
 }, {
   "name": "Fresh tomato",
   "category": "vegetable",
@@ -348,7 +348,7 @@
   "height": 450,
   "width": 450,
   "price": 25.88,
-  "rating": 0
+  "rating": 4
 }, {
   "name": "200ml Dettol Instant Hand Sanitizer",
   "category": "Health Care",
@@ -366,5 +366,5 @@
   "height": 450,
   "width": 307,
   "price": 21.32, 
-  "rating": 0
+  "rating": 3
 } ]
