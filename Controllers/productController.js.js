@@ -1,32 +1,80 @@
 const Product = require('../Models/productModel');
 const fs = require('fs');
-const async = require('hbs/lib/async');
+
 
 // const products =JSON.parse(fs.readFileSync(`dev-data/products.json`))
 
 
 
 //Home
-exports.home =async (req,res,next)=>{
+exports.home =async (req,res)=>{
+
+    // res.render('index',{admin:true});
     try{
-        console.log(req.query);
+        const queryObj = {...req.query}
+        console.log(queryObj);
+        const excludedFields = ['page','sort','limit','fields'];
+        excludedFields.forEach(el=> delete queryObj[el]);
+
+       //Advance Filtering
+       let queryStr = JSON.stringify(queryObj);
+       queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, match => `$${match}`);
+    //    console.log(JSON.parse(queryStr));
+        let query = Product.find(JSON.parse(queryStr));
+
+
+        // 1)sorting
+        if(req.query.sort){
+            const sortBy = req.query.sort.split(',').join(' ');
+            
+            query= query.sort(sortBy)
+        }else{
+            query=query.sort('-height');
+        }
+
+
+
+         // 2)Limiting Field
+        if(req.query.fields){
+            const fields = req.query.fields.split(',').join(' ');
+            
+            query= query.select(fields)
         
-        const products = await Product.find();
-            res.status(200).json({
+        }else{
+            query = query.select('-__v');
+        }
+         
+
+
+        //3)Pagination
+        // page=2&limit=10
+        const page = +req.query.page  || 1 ;
+        const limit = +req.query.limit || 100 ;
+        const skip = (page -1)*limit;
+        query = query.skip(skip).limit(limit)
+
+        if(req.query.page){
+            const numProducts = await Product.countDocuments();
+            if(skip > numProducts) throw new Error('This page does not exist')
+        }
+        
+
+
+        const products=await query;
+        
+        res.status(200).json({
                 results:products.length,
                 data:{
                     products
                 }
             })
-    }catch(err){
+    }catch(err){     
         res.status(400).json({
             status:'fail',
             message:err.message
         })
     }
 }
-
-
 
 
 // exports.home = async (req, res) => {
@@ -45,7 +93,7 @@ exports.home =async (req,res,next)=>{
 //       //  { duration: { gte: '5' }, difficulty: 'easy' }
 //       //  { duration: { $gte: '5' }, difficulty: 'easy' }
 //       // We have to replace gte to $gte and gt,lt,lte
-//       // const query = Tour.find(queryObj);
+//       // const query = Product.find(queryObj);
 //       let query = Product.find(JSON.parse(queryStr));
   
 //       //2)Sorting//////////////////////////////////////////////////
@@ -56,7 +104,7 @@ exports.home =async (req,res,next)=>{
 //         //url -localhost:3000/api/v1/tours?sort=-price,ratingsAverage
 //         //sort('price ratingAverage')
 //       } else {
-//         query = query.sort('-createdAt');
+//         query = query.sort('-height');
 //       }
   
 //       //3)Field Limiting//////////////////////////////////////////////////
@@ -85,9 +133,9 @@ exports.home =async (req,res,next)=>{
   
 //       res.status(200).json({
 //         status: 'success',
-//         results: tours.length,
+//         results: products.length,
 //         data: {
-//           tours: products,
+//            products,
 //         },
 //       });
 //     } catch (err) {
@@ -97,6 +145,9 @@ exports.home =async (req,res,next)=>{
 //       });
 //     }
 //   };
+
+
+
 
 //Addproduct
 exports.addProduct=async(req,res,next)=>{

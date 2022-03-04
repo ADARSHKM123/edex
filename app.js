@@ -7,8 +7,10 @@ var logger = require('morgan');
 var hbs=require('express-handlebars');
 
 
+
 var productRoutes = require('./routes/productRoutes');
 var usersRouter = require('./routes/users');
+
 
 var app = express();
 
@@ -27,7 +29,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());  
 app.use(express.static(path.join(__dirname, 'public'))); 
  
-app.use('/api/v1/products', productRoutes); 
+ 
+app.use('/', productRoutes); 
 app.use('/api/v1/products/users', usersRouter); 
 
 // catch 404 and forward to error handler
