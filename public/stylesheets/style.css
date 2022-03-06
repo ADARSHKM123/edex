@@ -78,9 +78,9 @@ align-items: center; */
 
 nav {
   width: 70%;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   background: #fff;
-  padding: 50px 0;
+  /* padding: 50px 0; */
 }
 nav ul {
   list-style: none;

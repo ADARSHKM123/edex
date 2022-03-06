@@ -5,7 +5,7 @@
   "image": "0.jpg",
   "height": 600,
   "width": 400,
-  "price": 28.1,
+  "price": 10,
   "rating": 4
 }, {
   "name": "Sweet fresh stawberry",
@@ -14,7 +14,7 @@
   "image": "1.jpg",
   "height": 450,
   "width": 299,
-  "price": 29.45,
+  "price": 70,
   "rating": 4
 }, {
   "name": "Asparagus",
@@ -23,7 +23,7 @@
   "image": "2.jpg",
   "height": 450,
   "width": 299,
-  "price": 18.95,
+  "price": 50,
   "rating": 3
 }, {
   "name": "Milk",
@@ -32,7 +32,7 @@
   "image": "3.jpg",
   "height": 600,
   "width": 399,
-  "price": 17.68,
+  "price": 50,
   "rating": 4
 }, {
   "name": "Beans",
@@ -41,7 +41,7 @@
   "image": "4.jpg",
   "height": 450,
   "width": 299,
-  "price": 17.11,
+  "price": 45,
   "rating": 2
 }, {
   "name": "Baking cake",
@@ -50,7 +50,7 @@
   "image": "5.jpg",
   "height": 450,
   "width": 675,
-  "price": 11.14,
+  "price": 25,
   "rating": 4
 }, {
   "name": "Pesto with basil",
@@ -68,7 +68,7 @@
   "image": "7.jpg",
   "height": 450,
   "width": 301,
-  "price": 27.35,
+  "price": 27,
   "rating": 2
 }, {
   "name": "Watermelon",
@@ -77,7 +77,7 @@
   "image": "8.jpg",
   "height": 600,
   "width": 399,
-  "price": 28.59,
+  "price": 35,
   "rating": 4
 }, {
   "name": "Lemon",
@@ -86,7 +86,7 @@
   "image": "9.jpg",
   "height": 450,
   "width": 299,
-  "price": 15.79,
+  "price": 60,
   "rating": 5
 }, {
   "name": "Homemade bread",
@@ -95,7 +95,7 @@
   "image": "10.jpg",
   "height": 450,
   "width": 301,
-  "price": 17.48,
+  "price": 40,
   "rating": 3
 }, {
   "name": "Legums",
@@ -104,7 +104,7 @@
   "image": "11.jpg",
   "height": 600,
   "width": 399,
-  "price": 14.77,
+  "price": 30,
   "rating": 3
 }, {
   "name": "Fresh tomato",
@@ -113,7 +113,7 @@
   "image": "12.jpg",
   "height": 600,
   "width": 903,
-  "price": 16.3,
+  "price": 16,
   "rating": 2
 }, {
   "name": "Cherry",
@@ -122,7 +122,7 @@
   "image": "13.jpg",
   "height": 450,
   "width": 350,
-  "price": 13.02,
+  "price": 65,
   "rating": 2
 }, {
   "name": "Green peace",
@@ -131,7 +131,7 @@
   "image": "14.jpg",
   "height": 450,
   "width": 300,
-  "price": 28.79,
+  "price": 80,
   "rating": 1
 }, {
   "name": "mushrooms",
@@ -140,7 +140,7 @@
   "image": "15.jpg",
   "height": 600,
   "width": 400,
-  "price": 20.31,
+  "price": 62,
   "rating": 1
 }, {
   "name": "Apple",
@@ -149,7 +149,7 @@
   "image": "16.jpg",
   "height": 400,
   "width": 600,
-  "price": 14.18,
+  "price": 62,
   "rating": 1
 }, {
   "name": "Pears",
@@ -158,7 +158,7 @@
   "image": "17.jpg",
   "height": 600,
   "width": 398,
-  "price": 19.49,
+  "price": 19,
   "rating": 4
 }, {
   "name": "Bnanana",
@@ -167,7 +167,7 @@
   "image": "18.jpg",
   "height": 600,
   "width": 398,
-  "price": 15.12,
+  "price": 15,
   "rating": 5
 }, {
   "name": "Meat",
@@ -176,7 +176,7 @@
   "image": "19.jpg",
   "height": 400,
   "width": 600,
-  "price": 16.76,
+  "price": 30,
   "rating": 5
 }, {
   "name": "Oranges",
@@ -185,7 +185,7 @@
   "image": "20.jpg",
   "height": 450,
   "width": 274,
-  "price": 21.48,
+  "price": 55,
   "rating": 4
 }, {
   "name": "Rice",
@@ -194,7 +194,7 @@
   "image": "21.jpg",
   "height": 450,
   "width": 299,
-  "price": 29.66,
+  "price": 32,
   "rating": 4
 }, {
   "name": "Ice cream",
@@ -203,7 +203,7 @@
   "image": "22.jpg",
   "height": 450,
   "width": 299,
-  "price": 22.7,
+  "price": 20,
   "rating": 2
 }, {
   "name": "Honey",
@@ -212,7 +212,7 @@
   "image": "23.jpg",
   "height": 450,
   "width": 299,
-  "price": 17.01,
+  "price": 100,
   "rating": 2
 }, {
   "name": "Lays Chips",
@@ -221,7 +221,7 @@
   "image": "24.jpg",
   "height": 600,
   "width": 398,
-  "price": 14.05,
+  "price": 35,
   "rating": 1
 }, {
   "name": "Clinics Plus",
@@ -230,7 +230,7 @@
   "image": "25.jpg",
   "height": 600,
   "width": 400,
-  "price": 28.86,
+  "price": 60,
   "rating": 2
 }, {
   "name": "Avocados",
@@ -239,7 +239,7 @@
   "image": "26.jpg",
   "height": 450,
   "width": 299,
-  "price": 26.21,
+  "price": 29,
   "rating": 4
 }, {
   "name": "Ricotta",
@@ -248,7 +248,7 @@
   "image": "27.jpg",
   "height": 600,
   "width": 398,
-  "price": 27.81,
+  "price": 27,
   "rating": 5
 }, {
   "name": "olive oil",
@@ -257,7 +257,7 @@
   "image": "28.jpg",
   "height": 450,
   "width": 300,
-  "price": 18.5,
+  "price": 95,
   "rating": 4
 }, {
   "name": "Granola",
@@ -266,7 +266,7 @@
   "image": "29.jpg",
   "height": 450,
   "width": 300,
-  "price": 29.97,
+  "price": 44,
   "rating": 3
 }, {
   "name": "popcorn",
@@ -275,7 +275,7 @@
   "image": "30.jpg",
   "height": 600,
   "width": 900,
-  "price": 25.26,
+  "price": 25,
   "rating": 5
 }, {
   "name": "Surf Excel",
@@ -284,7 +284,7 @@
   "image": "31.jpg",
   "height": 450,
   "width": 299,
-  "price": 27.61,
+  "price": 63,
   "rating": 4
 }, {
   "name": "Exo",
@@ -293,7 +293,7 @@
   "image": "32.jpg",
   "height": 600,
   "width": 398,
-  "price": 22.48,
+  "price": 20,
   "rating": 5
 }, {
   "name": "Mamaearth wet wipes",
@@ -302,7 +302,7 @@
   "image": "33.jpg",
   "height": 600,
   "width": 400,
-  "price": 14.35,
+  "price": 68,
   "rating": 5
 }, {
   "name": "Dove conditioner",
@@ -311,7 +311,7 @@
   "image": "34.jpg",
   "height": 600,
   "width": 400,
-  "price": 22.97,
+  "price": 85,
   "rating": 4
 }, {
   "name": "Nivea Shaving Cream",
@@ -320,7 +320,7 @@
   "image": "35.jpg",
   "height": 450,
   "width": 300,
-  "price": 13.55,
+  "price": 102,
   "rating": 2
 }, {
   "name": "Jaguar Deodorant",
@@ -329,7 +329,7 @@
   "image": "36.jpg",
   "height": 600,
   "width": 398,
-  "price": 28.96,
+  "price": 500,
   "rating": 5
 }, {
   "name": "Amul Butter",
@@ -338,7 +338,7 @@
   "image": "37.jpg",
   "height": 450,
   "width": 321,
-  "price": 21.01,
+  "price": 70,
   "rating": 4
 }, {
   "name": "Himalaya moisturizing lotion",
@@ -347,7 +347,7 @@
   "image": "38.jpg",
   "height": 450,
   "width": 450,
-  "price": 25.88,
+  "price": 120,
   "rating": 4
 }, {
   "name": "200ml Dettol Instant Hand Sanitizer",
@@ -356,7 +356,7 @@
   "image": "39.jpg",
   "height": 450,
   "width": 565,
-  "price": 15.18,
+  "price": 100,
   "rating": 1
 }, {
   "name": "Oats",
@@ -365,6 +365,6 @@
   "image": "40.jpg",
   "height": 450,
   "width": 307,
-  "price": 21.32, 
+  "price": 70, 
   "rating": 3
 } ]
