@@ -1,12 +1,14 @@
 const Product = require('../Models/productModel');
 const fs = require('fs');
 const APIFeatures = require('../Util/apiFeatures');
+var createError = require('http-errors');
+const catchAsync = require('../Util/catchAsync');
+const AppError = require('../Util/appError');
 // const products =JSON.parse(fs.readFileSync(`dev-data/products.json`))
 
 
 //Home
-exports.home = async (req, res, next) => {
-    try {
+exports.home =catchAsync(async (req, res, next) => {
         const features = new APIFeatures(Product.find(), req.query)
             .filter()
             .sort()
@@ -22,69 +24,41 @@ exports.home = async (req, res, next) => {
                 products
             }
         });
-        // res.status(200).render('index',{admin:false});
-
-    }catch (err) {
-        res.status(400).json({
-            status: 'fail',
-            message: err.message
-        })
-    }
-};
-
-
-
-
+        // res.status(200).render('index',{admin:false})
+});
 
 
 //Addproduct
-exports.addProduct = async (req, res, next) => {
-    try {
+exports.addProduct =catchAsync(async (req, res, next) => {
         const newproduct = await Product.create(req.body);
+
         res.status(200).json({
             status: "Success",
             data: {
                 product: newproduct
             }
-        })
-
-    } catch (err) {
-        res.status(400).json({
-            status: 'fail',
-            message: err.message
-        })
-    }
-}
-
-
+        });
+});
 
 
 //GetProduct
-exports.getProduct = async (req, res, next) => {
-    try {
+exports.getProduct = catchAsync(async(req, res, next) => {
+
         const newproduct = await Product.findById(req.params.id);
-        res.status(200).json({
+        res.status(200).json({ 
             status: "Success",
             data: {
                 product: newproduct
             }
         })
 
-    } catch (err) {
-        res.status(400).json({
-            status: 'fail',
-            message: err.message
-        })
-    }
-}
-
-
+});
 
 
 
 //UpdateOne
-exports.updateProduct = async (req, res, next) => {
-    try {
+exports.updateProduct = catchAsync(async (req, res, next) => {
+   
         const newproduct = await Product.findByIdAndUpdate(req.params.id, req.body, {
             new: true,
             runValidators: true
@@ -99,22 +73,13 @@ exports.updateProduct = async (req, res, next) => {
                 data: newproduct
             }
         });
-
-    } catch (err) {
-        res.status(400).json({
-            status: 'fail',
-            message: err.message
-        })
-    }
-}
-
-
+});
 
 
 
 //Delete Product
-exports.deleteProduct = async (req, res, next) => {
-    try {
+exports.deleteProduct = catchAsync(async (req, res, next) => {
+  
         await Product.findByIdAndDelete(req.params.id);
 
         res.status(204).json({
@@ -122,11 +87,4 @@ exports.deleteProduct = async (req, res, next) => {
             data: null
         })
 
-    } catch (err) {
-        res.status(400).json({
-            status: 'fail',
-            message: err.message
-        })
-    }
-
-}
+});

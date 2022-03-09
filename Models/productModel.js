@@ -72,10 +72,10 @@ productSchema.pre(/^find/,function(next){
 });
 
 
-productSchema.post(/^find/,function(doc,next){
-   console.log(doc);
-    next();
-});
+// productSchema.post(/^find/,function(doc,next){
+//    console.log(doc);
+//     next();
+// });
 
 
 
