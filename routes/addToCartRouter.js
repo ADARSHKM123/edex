@@ -7,7 +7,7 @@ var router = express.Router();
 
 router
 .route('/')
-.get(addToCartController.addToCart)
+.post(addToCartController.addToCart)
 
 
 module.exports = router

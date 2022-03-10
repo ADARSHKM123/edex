@@ -1,19 +1,20 @@
 var express = require('express');
 var router = express.Router();
 const productController = require('../Controllers/productController.js');
+const authController =require('../Controllers/authController');
 
 
 /* GET home page. */
 router
 .route('/')
-.get(productController.home)
+.get(authController.protect,productController.home)
 .post(productController.addProduct)
 
 router
 .route('/:id')
 .get(productController.getProduct)
 .patch(productController.updateProduct)
-.delete(productController.deleteProduct)
+.delete(authController.protect,authController.restrictTo('admin'),productController.deleteProduct)
 
 
 

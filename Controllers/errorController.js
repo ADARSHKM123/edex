@@ -33,6 +33,17 @@ exports.errormsg = function(err, req, res, next) {
     // res.locals.error = req.app.get('env') === 'development' ? err : {};
   
     // render the error page
+    if(err.message === 'invalid signature') 
+    res.json({
+      status:'fail',
+      message:"Invalid Token Please Login Again!"
+    })
+    if(err.message === 'jwt expired') 
+    res.json({
+      status:'fail',
+      message:"Your Token has Expired. Please login again!"
+    })
+    
     res.status(err.status || 500);
     res.json({
       status:'fail',
