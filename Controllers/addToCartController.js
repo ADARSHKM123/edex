@@ -47,3 +47,14 @@ exports.addToCart =catchAsync(async(req,res,next)=>{
     }
 
    });
+
+
+   exports.getAllCart=catchAsync(async(req,res,next)=>{
+     const CartItems =await Cart.find();
+     res.status(200).json({
+       length:CartItems.length,
+       data:{
+         CartItems
+       }
+     })
+   })

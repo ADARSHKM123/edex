@@ -8,6 +8,7 @@ var router = express.Router();
 router
 .route('/')
 .post(addToCartController.addToCart)
+.get(addToCartController.getAllCart)
 
 
 module.exports = router
