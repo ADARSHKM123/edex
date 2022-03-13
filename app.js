@@ -7,7 +7,7 @@ const logger = require('morgan');
 const hbs=require('express-handlebars');
 const AppError = require('./Util/appError');
 const globalErrorHandler = require('./Controllers/errorController');
-
+const ratelimit = require('express-rate-limit');
 
 const productRoutes = require('./routes/productRoutes');
 const usersRouter = require('./routes/userRoutes');
@@ -20,7 +20,16 @@ const app = express();
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
-  
+
+// const limiter =ratelimit({
+//   max:100,
+//   windowMs:60*60*1000,
+//   message:'Too many request from this IP, try again after 1  hour!'
+// })
+// app.use('/',limiter);
+
+
+   
 // view engine setup 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -31,9 +40,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());  
 app.use(express.static(path.join(__dirname, 'public'))); 
+
+
 app.use((req,res,next)=>{
   req.requestTime = new Date().toISOString();
-  console.log(req.headers);
+  // console.log(req.headers);
   next()
 })
  

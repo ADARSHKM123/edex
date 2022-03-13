@@ -16,6 +16,31 @@ const signToken=id=>{
     })
 }
 
+const createSendToken = (user, statusCode, res) => {
+  const token = signToken(user._id);
+  const cookieOptions = {
+    expires: new Date(
+      Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
+    ),
+    httpOnly: true
+  };
+  if (process.env.NODE_ENV === 'production') cookieOptions.secure = true;
+  
+  res.cookie('jwt', token, cookieOptions);
+
+  // Remove password from output
+  user.password = undefined; 
+
+  res.status(statusCode).json({
+    status: 'success',
+    token,
+    data: {
+      user
+    }
+  });
+};
+
+
 exports.signup =catchAsync(async(req,res,next)=>{
     const newUser =await User.create({
         name: req.body.name,
@@ -28,14 +53,7 @@ exports.signup =catchAsync(async(req,res,next)=>{
         pin:req.body.pin,
         role: req.body.role
     })
-    const token = signToken(newUser._id);
-    res.status(200).json({
-        status:'success',
-        token,
-        data:{
-            newUser
-        }
-    })
+    createSendToken(newUser,200,res);
 });
 
 
@@ -51,16 +69,14 @@ exports.login=catchAsync(async(req,res,next)=>{
     if(!user || !await user.correctPassword(password,user.password)){
         return next(createError('Incorrect email or password'),400);
     }
-    const token=signToken(user._id);
-    res.status(200).json({
-        status:'success',
-        token
-    })
+    createSendToken(user,200,res);
+    //Send Cookie
+
 
 })
 
 
-
+//PROTECT/////////////////////////////////////////////////////////////////
 exports.protect=catchAsync(async(req,res,next)=>{
     let token;
    if(req.headers.authorization && req.headers.authorization.startsWith('Bearer'))
@@ -190,11 +206,7 @@ exports.resetPassword = catchAsync(async (req, res, next) => {
 
   // 3) Update changedPasswordAt property for the user
   // 4) Log the user in, send JWT
-  const token=signToken(user._id);
-  res.status(200).json({
-      status:'success',
-      token
-  })
+  createSendToken(user, 200, res);
 });
 
 
@@ -216,9 +228,5 @@ exports.updatePassword = catchAsync(async (req, res, next) => {
   // User.findByIdAndUpdate will NOT work as intended!
 
   // 4) Log user in, send JWT
-  const token=signToken(user._id);
-  res.status(200).json({
-      status:'success',
-      token
-  })
+  createSendToken(user, 200, res);
 });

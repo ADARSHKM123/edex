@@ -7,7 +7,7 @@ const authController =require('../Controllers/authController');
 /* GET home page. */
 router
 .route('/')
-.get(authController.protect,productController.home)
+.get(productController.home)
 .post(productController.addProduct)
 
 router
