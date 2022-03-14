@@ -12,6 +12,7 @@ route('/signup')
 
 router.
 route('/login')
+.get(userController.login)
 .post(authController.login)
 
 router.

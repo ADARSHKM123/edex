@@ -12,6 +12,7 @@ const ratelimit = require('express-rate-limit');
 const productRoutes = require('./routes/productRoutes');
 const usersRouter = require('./routes/userRoutes');
 const addToCartRouter = require('./routes/addToCartRouter');  
+const adminRouter = require('./routes/adminRouter');  
 const { error } = require('console');
 
 
@@ -29,11 +30,16 @@ if (process.env.NODE_ENV === 'development') {
 // app.use('/',limiter);
 
 
+
    
 // view engine setup 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.engine('hbs', hbs.engine({extname: 'hbs',defaultLayout: 'layout', layoutsDir:__dirname + '/views/layout',partialssDir:__dirname + '/views/partials'}));
+
+
+
+
 
 app.use(logger('dev'));         
 app.use(express.json()); 
@@ -45,6 +51,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use((req,res,next)=>{
   req.requestTime = new Date().toISOString();
   // console.log(req.headers);
+  console.log(req.cookies);
   next()
 })
  
@@ -52,6 +59,7 @@ app.use((req,res,next)=>{
 app.use('/', productRoutes); 
 app.use('/api/v1/users', usersRouter); 
 app.use('/api/v1/addToCart', addToCartRouter);  
+app.use('/api/v1/admin', adminRouter);  
 
 // app.all('*',(req,res,next)=>{
 
@@ -59,7 +67,7 @@ app.use('/api/v1/addToCart', addToCartRouter);
 // });
 
 // error handler
-app.use(globalErrorHandler.errorCreate);
+app.use(globalErrorHandler.errorCreate); 
 app.use(globalErrorHandler.errormsg);
 
 

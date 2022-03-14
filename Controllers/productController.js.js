@@ -88,3 +88,13 @@ exports.deleteProduct = catchAsync(async (req, res, next) => {
         })
 
 });
+
+
+exports.productlist = catchAsync(async (req, res, next) => {
+  
+   res.status(200).render('admin/view-products',{admin:true});
+
+});
+
+
+
