@@ -12,7 +12,8 @@ exports.addToCart =catchAsync(async(req,res,next)=>{
     const user =await User.findById({userId});
 
     if(!user){
-        return next(createError('You have to signUp first'),400)
+        console.log('No User');
+        return next(createError('You have to signUp first'),400);
     }
     
     let cart = await Cart.findOne({ userId });
