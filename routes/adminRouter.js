@@ -6,7 +6,7 @@ const authController =require('../Controllers/authController');
 
 
 router
-.route('/view-product')
+.route('/view-products')
 .get(productController.productlist)
 
 
