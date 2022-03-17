@@ -51,6 +51,7 @@ const userSchema = new mongoose.Schema({
         message: 'Passwords are not the same!'
       }
     },
+    cart:[],
     passwordChangedAt: Date, 
     passwordResetToken: String,
     passwordResetExpires: Date,
@@ -65,7 +66,6 @@ const userSchema = new mongoose.Schema({
   
 userSchema.pre('save', function(next) {
   if (!this.isModified('password') || this.isNew) return next();
-
   this.passwordChangedAt = Date.now() - 1000;
   next();
 });

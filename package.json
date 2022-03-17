@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./server"
+    "start": "nodemon ./server",
+    "start:prod": "set NODE_ENV=production && nodemon server.js"
   },
   "dependencies": {
     "axios": "^0.26.1",

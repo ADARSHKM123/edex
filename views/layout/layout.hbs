@@ -55,8 +55,12 @@
 					<li><a href="">Personal Care</a></li>
 					<li><a href="">Household</a></li>
 					<li><a href="">Contact US</a></li>
-					<li><a href="/signup">Sign uP</a></li>
-					<li><a href="/api/v1/users/login">Login</a></li> 
+					{{!-- <li><a href="/api/v1/users/login">Login</a></li>  --}}
+					{{#if login}}
+					<a href="/api/v1/users/login"><ion-icon name="person" style="color: #f38b02; padding-left:50px; font-size:24px;"></ion-icon></a>
+					<a href=""><ion-icon name="cart" style="color: #145205; padding-left:30px; font-size:24px;"></ion-icon></a>
+					{{/if}}
+					{{!-- <ion-icon name="person-outline"></ion-icon> --}}
 				</ul> 
 			</nav>
 			{{!-- <span>

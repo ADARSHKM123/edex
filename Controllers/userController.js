@@ -1,6 +1,7 @@
 const User = require('../Models/userModel');
 const catchAsync = require('../Util/catchAsync');
 const createError = require('http-errors');
+const async = require('hbs/lib/async');
 
 
 const filterObj = (obj, ...allowedFields) => {
@@ -71,12 +72,13 @@ exports.createUser = (req,res,next)=>{
 }
 
 
-exports.getUser = (req,res,next)=>{
+exports.getUser =catchAsync(async(req,res,next)=>{
+  const user =await User.findById(req.params.id);
     res.status(200).json({
-        status:'fail',
-        message:'This route is not yet defined'
+        status:'success',
+        data:user
     })
-}
+})
 
 
 exports.updateUser = (req,res,next)=>{
