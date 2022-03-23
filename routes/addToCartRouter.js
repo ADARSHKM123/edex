@@ -5,20 +5,21 @@ var express = require('express');
 var router = express.Router();
 
 
-router.use(authController.protect);
+// router.use(authController.protect);
 
 router
 .route('/')
-.post(addToCartController.addToCart)
-.get(addToCartController.getAllCart)
+.post(authController.protect,addToCartController.addToCart)
+// .get(addToCartController.getAllCart)
 
-router
-.route('/:id')
-.get(addToCartController.getCart)
+// router
+// .route('/:id')
+// .get(addToCartController.getCart)
 
-router.route('/deleteCart/:id')
-.delete(addToCartController.deleteItem)
+// router.route('/deleteCart/:id')
+// .delete(addToCartController.deleteItem)
 
 
 module.exports = router
 
+ 

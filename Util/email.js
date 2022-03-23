@@ -15,7 +15,7 @@ const sendEmail =async options=>{
 
 
     // 2)Define the email option
-    const mailOptoins = {
+    const mailOptoins = { 
         from:'Adarsh <hello@adarsh.io>',
         to:options.email,
         subject:options.subject, 

@@ -1,22 +1,16 @@
 const mongoose = require('mongoose');
-const User =require('./userModel');
-const Product =require('./productModel');
 
 
 const cartSchema = new mongoose.Schema({
-    userId: {
-        type:mongoose.Schema.ObjectId,
-        ref: "User"
+    user: {
+      type: mongoose.Schema.ObjectId,
+        ref: "User",
+        required: [true, 'Booking must belong to a user!']
       },
-      products: [
-        {
-          productId: mongoose.Schema.ObjectId,
-          // ref: "Product",
-          quantity: Number,
-          name: String,
-          price: Number
-        }
-      ],
+      products:{
+        type: mongoose.Schema.ObjectId,
+        ref:"Product"
+      },
       active: {
         type: Boolean,
         default: true
@@ -32,12 +26,20 @@ const cartSchema = new mongoose.Schema({
 },
 { timestamps: true })
 
-cartSchema.pre('save', async function(next){
-  const user=await User.findById(this.userId);
-  this.userId = user;
-  next()
-})
+// cartSchema.pre('save', async function(next){
+//   const user=await User.findById(this.userId);
+//   this.userId = user;
+//   next()
+// })
 
+
+cartSchema.pre(/^find/, function(next) {
+  this.populate('user').populate({
+    path:'products',
+    select:'name'
+});
+  next();
+});
 
 // cartSchema.pre('save', async function(next){
 //   const product=await Product.findById(this.productId);
