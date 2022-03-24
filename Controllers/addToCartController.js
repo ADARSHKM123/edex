@@ -1,23 +1,24 @@
 const createError = require('http-errors');
 const catchAsync = require('../Util/catchAsync');
-const Cart = require('../Models/cartModel');
+const Cart = require('../Models/cartItemsModel');
 const User = require('../Models/userModel');
+
 
 
 
 exports.addToCart =catchAsync(async(req,res,next)=>{
 
-  const userId = req.user._id
+  const user = req.user._id
 
   const { productId, quantity,name,price} = req.body;
 
-    const newuser =await User.findById(userId);
+    const newuser =await User.findById(user);
 
     if(!newuser){
       return next(createError('You have to SignUP first', 400));
     }
     
-    let cart = await Cart.findOne({userId});
+    let cart = await Cart.findOne({user});
 
     if (cart) {
       //cart exists for user
@@ -39,7 +40,7 @@ exports.addToCart =catchAsync(async(req,res,next)=>{
     } else {
       //no cart for user, create new cart
       const newCart = await Cart.create({
-        userId,
+        user,
         products: [{ productId, quantity, name, price }]
       });
       return res.status(201).json({
@@ -65,7 +66,7 @@ exports.addToCart =catchAsync(async(req,res,next)=>{
    })
 
    exports.getCart=catchAsync(async(req,res,next)=>{
-    const CartItem =await Cart.findById(req.params.id).populate(products.productId);
+    const CartItem =await Cart.findById(req.params.id)
     res.status(200).json({
       status:'success',
       data:{
@@ -77,15 +78,22 @@ exports.addToCart =catchAsync(async(req,res,next)=>{
 
    exports.deleteItem=catchAsync(async(req,res,next)=>{
      const cartItem = await Cart.findByIdAndDelete(req.params.id);
-
      res.status(204).json({  
       status: 'success',
       data: null
   })
-
-
    })
 
 
 
-
+exports.getMyCart=catchAsync(async(req,res,next)=>{
+  const userId=req.user._id;
+  const cartItems =await Cart.findOne({user:userId})
+  if(cartItems === null){
+    return next(createError("No items in the cart",400))
+  }
+  res.status(200).json({
+    status:'success',
+    cartItems
+  })
+});

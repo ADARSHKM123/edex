@@ -13,6 +13,7 @@ const productRoutes = require('./routes/productRoutes');
 const usersRouter = require('./routes/userRoutes');
 const addToCartRouter = require('./routes/addToCartRouter');  
 const adminRouter = require('./routes/adminRouter');  
+const userCartRouter = require('./routes/userCartRouter');
 const { error } = require('console');
 
 
@@ -60,6 +61,7 @@ app.use('/', productRoutes);
 app.use('/api/v1/users', usersRouter); 
 app.use('/api/v1/cart', addToCartRouter);  
 app.use('/api/v1/admin', adminRouter);  
+app.use('/api/v1/mycart', userCartRouter);  
 
 // app.all('*',(req,res,next)=>{
 

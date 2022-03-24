@@ -4,7 +4,7 @@ const Product =require('./productModel');
 
 
 const cartSchema = new mongoose.Schema({
-    userId: {
+    user: {
         type:mongoose.Schema.ObjectId,
         ref: "User"
       },
@@ -14,7 +14,10 @@ const cartSchema = new mongoose.Schema({
           type:mongoose.Schema.ObjectId,
            ref: "Product",
           },
-          quantity: Number,
+          quantity: {
+            type:Number,
+            default:1
+          },
           name: String,
           price: Number
         }
@@ -34,12 +37,16 @@ const cartSchema = new mongoose.Schema({
 },
 { timestamps: true })
 
-cartSchema.pre('save', async function(next){
-  const user=await User.findById(this.userId);
-  this.userId = user;
+// cartSchema.pre('save', async function(next){
+//   const newuser=await User.findById(this.user);
+//   this.user = newuser;
+//   next()
+// })
+
+cartSchema.pre('save',function(next){
+  this.populate('user')
   next()
 })
-
 // cartSchema.pre(/^find/,function(next){
 //   this.populate({path:'products',populate:{
 //     path: 'productId',
@@ -48,9 +55,9 @@ cartSchema.pre('save', async function(next){
 //   next()
 // })
 
-// cartSchema.pre(/^find/, async function(next){
+// cartSchema.pre('save', async function(next){
 //  const productPromises =  this.products.map(async each=> await User.findById(each.productId))
-//  this.products = await Promise.all(productPromises);
+//  this.products = await Promise.all(productPromises);  
 //  next();
 // })
 
@@ -66,4 +73,4 @@ cartSchema.pre('save', async function(next){
 
 const Cart = mongoose.model('cart',cartSchema);
 
-module.exports = Cart
+module.exports = Cart 

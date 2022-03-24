@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 const validator= require('validator');
 const bcrypt = require('bcryptjs');
 const crypto = require('crypto');
+const Cart =require('../Models/cartItemsModel');
+
 
 const userSchema = new mongoose.Schema({
     name: {
@@ -51,7 +53,10 @@ const userSchema = new mongoose.Schema({
         message: 'Passwords are not the same!'
       }
     },
-    cart:[],
+    cartId:{
+      type:mongoose.Schema.Types.ObjectId,
+      ref:'Cart'
+    },
     passwordChangedAt: Date, 
     passwordResetToken: String,
     passwordResetExpires: Date,
@@ -62,13 +67,34 @@ const userSchema = new mongoose.Schema({
     }
   });
   
+  userSchema.pre(/^find/,function(next){
+    this.populate({path:'cartId'});
+    next()
+  })
 
-  
+  // userSchema.pre(/^find/, async function(next){
+  //   console.log(this.cart);
+  //   // const newcart=await Cart.findById({this.cart});
+  //   // console.log(newcart);
+  //   // this.cart = newcart;
+  //   next()
+  // })
+
+
 userSchema.pre('save', function(next) {
   if (!this.isModified('password') || this.isNew) return next();
   this.passwordChangedAt = Date.now() - 1000;
   next();
 });
+
+
+
+// userSchema.pre(/^find/,async function(next){
+//   console.log(this.id);
+//  const cart = await Cart.find({user:this.id});
+//  console.log(cart);
+//   next()
+// }) 
 
 
 userSchema.pre(/^find/, function(next) {

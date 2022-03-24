@@ -497,9 +497,14 @@ footer ul li{
 
 } 
 .card-container p{
+  color: #000;
   margin: 0 auto;
   padding-top: 10px;
 }
+.anchor:hover{
+  text-decoration: none;
+}
+
 .cards-show h2{
   display: flex;
   align-items: center;
@@ -525,6 +530,9 @@ footer ul li{
   height: 375px;
  
 }
+.card-text:hover{
+  text-decoration: none;
+}
 .data{
   width: 304px;
   height: 45px;
@@ -542,8 +550,40 @@ padding-top: 10px;
 }
 .desc{
   padding-top: 10px;
-  /* margin: 0 auto; */
-  padding-left: 115px;
+  display: flex;
+  gap: 20px;
+ align-content: center;
+ justify-content: center;
+ background-color: #eeeeee;
+}
+.desc p{
+  font-size: 20px;
+  font-weight: 500;
+}
+.data{
+  background-color: #eeeeee;
+}
+.addto-cart{
+  border-radius: 20px;
+  width: 200px;
+  height:30px;
+  background-color: #ee0606;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: 0 auto;
+  margin-top: 5px;
+}
+.addto-cart:hover{
+  background-color: #f35151;
+  color: #ffffff;
+}
+.addToCart-link:hover{
+  text-decoration: none;
+}
+.addto-cart p{
+  font-weight: 600;
 }
 
 
@@ -559,6 +599,13 @@ padding-bottom: 65px;
   height: auto;
 }
 
+.banner::after{
+  content: 'A world of groceries';
+  position: relative;
+  color: #104911;
+  top: 0;
+  right: 0;
+}
 
 
 /* //Login */
