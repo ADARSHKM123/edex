@@ -50,13 +50,13 @@
 					{{else}}
 					{{>user-header}}
 					{{/if}}
-					<li><a href="">Kitchen</a></li>
+					<li><a href="/api/v1/user/productpage">Kitchen</a></li>
 					<li><a href="">Personal Care</a></li>
 					<li><a href="">Household</a></li>
 					<li><a href="">Contact US</a></li>
 					{{!-- <li><a href="/api/v1/users/login">Login</a></li>  --}}
 					{{#if login}}
-					<a href="/api/v1/users/login"><ion-icon name="person" style="color: #f38b02; padding-left:50px; font-size:24px;"></ion-icon></a>
+					<a href="/api/v1/user/login"><ion-icon name="person" style="color: #f38b02; padding-left:50px; font-size:24px;"></ion-icon></a>
 					<a href=""><ion-icon name="cart" style="color: #145205; padding-left:30px; font-size:24px;"></ion-icon></a>
 					{{/if}}
 					{{!-- <ion-icon name="person-outline"></ion-icon> --}}
@@ -154,5 +154,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"></script>
 <script src="javascripts/style.js"></script>
 <script src="/javascripts/login.js"></script>
+<script src="./product.js" defer></script>
 </html>
 

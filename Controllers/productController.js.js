@@ -21,10 +21,11 @@ exports.home =catchAsync(async (req, res, next) => {
         //     status: 'success',
         //     results: products.length,
         //     data: {
-        //         products 
+        //         products  
         //     }
         // }); 
         res.status(200).render('index',{admin:false,login:true})
+        // res.status(200).render('product',{admin:false,login:true})
 });
 
 
