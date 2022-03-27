@@ -9,4 +9,8 @@ router.route('/login')
 router.route('/productpage')
 .get(viewController.product)
 
-module.exports = router;  
+
+router.route('/vegitables')
+.get(viewController.vegitablepage)
+
+module.exports = router;         
