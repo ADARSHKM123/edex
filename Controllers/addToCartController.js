@@ -6,9 +6,11 @@ const User = require('../Models/userModel');
 
 
 
-exports.addToCart =catchAsync(async(req,res,next)=>{
+exports.addToCart = catchAsync(async(req,res,next)=>{
 
-  const user = req.user._id
+  const user = req.user._id;
+
+  if(!req.body.productId) req.body.productId= req.params.productId;
 
   const { productId, quantity,name,price} = req.body;
 

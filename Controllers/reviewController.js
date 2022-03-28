@@ -1,27 +1,10 @@
 const Review = require('./../models/reviewModel');
-const catchAsync = require('../Util/catchAsync');
+const handle =require('../Controllers/handlefactory');
 
 
-exports.getAllReviews = (async(req,res,next)=>{
-    const reviews = await Review.find();
 
-    res.status(200).json({
-        status:'success',
-        result: reviews.length,
-        data:{
-            reviews
-        }
-    })
-})
-
-exports.createReview = catchAsync(async (req,res,next)=>{
-
-    const newReview = await Review.create(req.body);
-
-    res.status(201).json({
-        status:'success',
-        data:{
-            newReview
-        }
-    })
-})
+exports.getReview  =  handle.getOne(Review)
+exports.createReview = handle.createOne(Review)
+exports.updateReview = handle.updateOne(Review)
+exports.deleteReview = handle.deleteOne(Review)
+exports.getAllReviews = handle.getAll(Review);

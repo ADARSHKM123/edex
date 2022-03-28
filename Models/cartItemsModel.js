@@ -8,7 +8,7 @@ const cartSchema = new mongoose.Schema({
         type:mongoose.Schema.ObjectId,
         ref: "User"
       },
-      products: [
+      products:[
         {
           productId: {
           type:mongoose.Schema.ObjectId,
@@ -42,6 +42,10 @@ const cartSchema = new mongoose.Schema({
 }
 )
 
+
+// cartSchema.virtual('TotalPrice').get(function() {
+//   return this.productId.price * this.quantity;
+// });
 
 cartSchema.pre(/^find/,function(next){
   this.populate('user')
