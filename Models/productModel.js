@@ -71,6 +71,13 @@ productSchema.pre(/^find/,function(next){
     next();
 });
 
+//virtual populate
+productSchema.virtual('reviews',{
+    ref:'Review',
+    foreignField:'product',
+    localField:'_id'
+})
+
 
 // productSchema.post(/^find/,function(doc,next){
 //    console.log(doc);

@@ -1,7 +1,7 @@
-const User = require('../Models/userModel');
 const catchAsync = require('../Util/catchAsync');
 const createError = require('http-errors');
 const async = require('hbs/lib/async');
+const User = require('../Models/userModel');
 
 
 const filterObj = (obj, ...allowedFields) => {
@@ -73,10 +73,12 @@ exports.createUser = (req,res,next)=>{
 
 
 exports.getUser =catchAsync(async(req,res,next)=>{
-  const user =await User.findById(req.params.id);
+  const user =await User.findById(req.params.id).populate('mycart'); 
     res.status(200).json({
         status:'success',
-        data:user
+        data:{
+          user
+        }
     })
 })
 
@@ -94,7 +96,6 @@ exports.deleteUser = (req,res,next)=>{
         message:'This route is not yet defined'
     })
 }
-
 
 
 // exports.login = catchAsync(async (req, res, next) => {

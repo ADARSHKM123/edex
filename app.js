@@ -14,7 +14,9 @@ const usersRouter = require('./routes/userRoutes');
 const addToCartRouter = require('./routes/addToCartRouter');  
 const adminRouter = require('./routes/adminRouter');  
 const userCartRouter = require('./routes/userCartRouter');
-const viewController=require('./routes/viewRouter');
+const viewRouter=require('./routes/viewRouter');
+const reviewRouter = require('./routes/reviewRoutes');
+
 
 const { error } = require('console');
 
@@ -60,11 +62,14 @@ app.use((req,res,next)=>{
  
  
 app.use('/', productRoutes); 
-app.use('/api/v1/users', usersRouter); 
 app.use('/api/v1/cart', addToCartRouter);  
+app.use('/api/v1/users', usersRouter); 
 app.use('/api/v1/admin', adminRouter);  
 app.use('/api/v1/mycart', userCartRouter);  
-app.use('/api/v1/user', viewController);  
+app.use('/api/v1/user', viewRouter);  
+app.use('/api/v1/reviews', reviewRouter);  
+
+
 
 // app.all('*',(req,res,next)=>{
 
@@ -74,11 +79,6 @@ app.use('/api/v1/user', viewController);
 // error handler
 app.use(globalErrorHandler.errorCreate); 
 app.use(globalErrorHandler.errormsg);
-
-
-
-
-
 
 
 module.exports = app;

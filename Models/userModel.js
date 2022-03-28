@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
+const Cart =require('../Models/cartItemsModel');
 const validator= require('validator');
 const bcrypt = require('bcryptjs');
 const crypto = require('crypto');
-const Cart =require('../Models/cartItemsModel');
+
 
 
 const userSchema = new mongoose.Schema({
@@ -53,10 +54,6 @@ const userSchema = new mongoose.Schema({
         message: 'Passwords are not the same!'
       }
     },
-    cartId:{
-      type:mongoose.Schema.Types.ObjectId,
-      ref:'Cart'
-    },
     passwordChangedAt: Date, 
     passwordResetToken: String,
     passwordResetExpires: Date,
@@ -64,13 +61,25 @@ const userSchema = new mongoose.Schema({
       type: Boolean,
       default: true,
       select: false
-    }
-  });
-  
-  userSchema.pre(/^find/,function(next){
-    this.populate({path:'cartId'});
-    next()
+    },
+    
+  },
+  {
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true }
+  }
+  ); 
+
+  userSchema.virtual('mycart',{
+    ref:'Cart',
+    foreignField:'user', 
+    localField:'_id'
   })
+  
+  // userSchema.pre(/^find/,function(next){
+  //   this.populate({path:'cartId'});
+  //   next()
+  // })
 
   // userSchema.pre(/^find/, async function(next){
   //   console.log(this.cart);

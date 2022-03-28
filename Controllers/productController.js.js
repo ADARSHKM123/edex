@@ -17,14 +17,14 @@ exports.home =catchAsync(async (req, res, next) => {
         const products = await features.query;
 
         // SEND RESPONSE
-        // res.status(200).json({
-        //     status: 'success',
-        //     results: products.length,
-        //     data: {
-        //         products  
-        //     }
-        // }); 
-        res.status(200).render('index',{admin:false,login:true})
+        res.status(200).json({
+            status: 'success',
+            results: products.length,
+            data: {
+                products  
+            }
+        }); 
+        // res.status(200).render('index',{admin:false,login:true})
         // res.status(200).render('product',{admin:false,login:true})
 });
 
@@ -45,7 +45,7 @@ exports.addProduct =catchAsync(async (req, res, next) => {
 //GetProduct
 exports.getProduct = catchAsync(async(req, res, next) => {
 
-        const newproduct = await Product.findById(req.params.id);
+        const newproduct = await Product.findById(req.params.id).populate('reviews')
         res.status(200).json({ 
             status: "Success",
             data: {
