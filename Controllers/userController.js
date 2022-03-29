@@ -60,7 +60,7 @@ exports.createUser = (req,res,next)=>{
     })
 }
 
-exports.getUser=handle.getOne(User,'cart');
+exports.getUser=handle.getOne(User,{ path:'mycart' });
 exports.getAllusers = handle.getAll(User);
 exports.updateUser = handle.updateOne(User);
 exports.deleteUser = handle.deleteOne(User);

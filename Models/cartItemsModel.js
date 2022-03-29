@@ -12,13 +12,12 @@ const cartSchema = new mongoose.Schema({
         {
           productId: {
           type:mongoose.Schema.ObjectId,
-           ref: "Product",
+           ref: "Product"
           },
-          quantity: {
+          quantity:{
             type:Number,
             default:1
           },
-          name: String,
           price: Number
         }
       ],
@@ -28,12 +27,8 @@ const cartSchema = new mongoose.Schema({
       },
       modifiedOn: {
         type: Date,
-        default: Date.now 
-      },
-      quantity:{
-        type:Number,
-        default:1
-      }   
+        default: Date.now  
+      }, 
 },
 { timestamps: true },
 {
@@ -76,5 +71,10 @@ cartSchema.pre(/^find/,function(next){
 
 
 const Cart = mongoose.model('cart',cartSchema);
+
+Cart.collection.dropIndexes(function (err, results) {
+ if(err) console.log(err);
+ console.log('success');
+});
 
 module.exports = Cart 

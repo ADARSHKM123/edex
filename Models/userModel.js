@@ -70,7 +70,7 @@ const userSchema = new mongoose.Schema({
   }
   ); 
 
-  userSchema.virtual('cart',{
+  userSchema.virtual('mycart',{
     ref:'Cart',
     foreignField:'user', 
     localField:'_id'
