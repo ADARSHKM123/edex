@@ -8,8 +8,8 @@ const addToCartController =require('../Controllers/addToCartController');
 /* GET home page. */
 router
 .route('/')
-.get(productController.home)
-.post(productController.addProduct)
+.get(productController.getAllProduct)
+.post(authController.restrictTo('admin'),productController.addProduct)
 
 router
 .route('/:id')
@@ -21,7 +21,8 @@ router.route('/:productId/reviews')
 .post(
     authController.protect,
     reviewController.createReview   
-)
+).get(    authController.protect,
+    reviewController.getReview  )
 
 router.route('/:productId/cart')
 .post(

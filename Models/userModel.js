@@ -18,10 +18,13 @@ const userSchema = new mongoose.Schema({
       lowercase: true,
       validate: [validator.isEmail, 'Please provide a valid email']
     },
-    photo: String,
+    photo:{ 
+      type:String,
+      defsult:'default.jpg'
+    },
     role: {
       type: String,
-      enum: ['user', 'guide', 'lead-guide', 'admin'],
+      enum: ['user',  'admin'],
       default: 'user'
     },
     mobile:{
@@ -36,7 +39,7 @@ const userSchema = new mongoose.Schema({
       type:Number,
       required:[true,'Please Provide Your Mobile Number'],
       min:[4,'Enter a valid Pin']
-    },
+    },   
     password: {
       type: String,
       required: [true, 'Please provide a password'],
@@ -63,7 +66,7 @@ const userSchema = new mongoose.Schema({
       select: false
     },
     
-  },
+  },  
   {
     toJSON: { virtuals: true },
     toObject: { virtuals: true }

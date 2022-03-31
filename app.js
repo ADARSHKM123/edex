@@ -61,7 +61,7 @@ app.use((req,res,next)=>{
 })
  
  
-app.use('/', productRoutes); 
+app.use('/api/v1/products', productRoutes); 
 app.use('/api/v1/cart', addToCartRouter);  
 app.use('/api/v1/users', usersRouter); 
 app.use('/api/v1/admin', adminRouter);  

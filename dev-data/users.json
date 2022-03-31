@@ -1,0 +1,202 @@
+[
+    {
+        "_id": "62454481c9cdf3a6a18cd095",
+        "name": "Adarsh KM",
+        "email": "admin@edex.io",
+        "role": "admin",
+        "mobile": 9131282593,
+        "Address": "Mavoor Road",
+        "pin": 554459,
+        "id": "62454481c9cdf3a6a18cd095"
+    },
+    {
+        "_id": "6245b62f215e5cf2ef98e429",
+        "name": "Lourdes Browning",
+        "email": "loulou@example.com",
+        "role": "user",
+        "mobile": 8035053029,
+        "Address": "IndiraNagar 123 Street",
+        "pin": 681195,
+        "id": "6245b62f215e5cf2ef98e429"
+    },
+    {
+        "_id": "6245b644215e5cf2ef98e42b",
+        "name": "Sophie Louise Hart",
+        "email": "sophie@example.com",
+        "role": "user",
+        "mobile": 6203748317,
+        "Address": "Vadakara Nut Street",
+        "pin": 250037,
+        "id": "6245b644215e5cf2ef98e42b"
+    },
+    {
+        "_id": "6245b653215e5cf2ef98e42d",
+        "name": "Ayla Cornell",
+        "email": "ayls@example.com",
+        "role": "user",
+        "mobile": 4644132689,
+        "Address": "Calicut KSRTC Dippo",
+        "pin": 155730,
+        "id": "6245b653215e5cf2ef98e42d"
+    },
+    {
+        "_id": "6245b661215e5cf2ef98e42f",
+        "name": "Leo Gillespie",
+        "email": "leo@example.com",
+        "role": "user",
+        "mobile": 7464495292,
+        "Address": "Nut Street",
+        "pin": 894815,
+        "id": "6245b661215e5cf2ef98e42f"
+    },
+    {
+        "_id": "6245b674215e5cf2ef98e431",
+        "name": "Jennifer Hardy",
+        "email": "jennifer@example.com",
+        "role": "user",
+        "mobile": 8068245830,
+        "Address": "Nut Street",
+        "pin": 217879,
+        "id": "6245b674215e5cf2ef98e431"
+    },
+    {
+        "_id": "6245b680215e5cf2ef98e433",
+        "name": "Kate Morrison",
+        "email": "kate@example.com",
+        "role": "user",
+        "mobile": 7795217927,
+        "Address": "Nut Street",
+        "pin": 142613,
+        "id": "6245b680215e5cf2ef98e433"
+    },
+    {
+        "_id": "6245b6e9215e5cf2ef98e435",
+        "name": "Eliana Stout",
+        "email": "eliana@example.com",
+        "role": "user",
+        "mobile": 4611012910,
+        "Address": "Thikkodi",
+        "pin": 940057,
+        "id": "6245b6e9215e5cf2ef98e435"
+    },
+    {
+        "_id": "6245b6f4215e5cf2ef98e437",
+        "name": "Cristian Vega",
+        "email": "chris@example.com",
+        "role": "user",
+        "mobile": 8700581661,
+        "Address": "China Town,Singapore",
+        "pin": 701942,
+        "id": "6245b6f4215e5cf2ef98e437"
+    },
+    {
+        "_id": "6245b702215e5cf2ef98e439",
+        "name": "Steve T. Scaife",
+        "email": "steve@example.com",
+        "role": "admin",
+        "mobile": 2109475842,
+        "Address": "Mall Road, Shimla",
+        "pin": 277052,
+        "id": "6245b702215e5cf2ef98e439"
+    },
+    {
+        "_id": "6245b70e215e5cf2ef98e43b",
+        "name": "Aarav Lynn",
+        "email": "aarav@example.com",
+        "role": "user",
+        "mobile": 1187308481,
+        "Address": "Hazratganj, Lucknow",
+        "pin": 956759,
+        "id": "6245b70e215e5cf2ef98e43b"
+    },
+    {
+        "_id": "6245b71c215e5cf2ef98e43d",
+        "name": "Miyah Myles",
+        "email": "miyah@example.com",
+        "role": "user",
+        "mobile": 8882105803,
+        "Address": "Fontainhas, Goa",
+        "pin": 774733,
+        "id": "6245b71c215e5cf2ef98e43d"
+    },
+    {
+        "_id": "6245b75d215e5cf2ef98e440",
+        "name": "Ben Hadley",
+        "email": "ben@example.com",
+        "role": "user",
+        "mobile": 5686847273,
+        "Address": "Nut Street",
+        "pin": 913557,
+        "id": "6245b75d215e5cf2ef98e440"
+    },
+    {
+        "_id": "6245b771215e5cf2ef98e442",
+        "name": "Laura Wilson",
+        "email": "laura@example.com",
+        "role": "user",
+        "mobile": 7612328283,
+        "Address": "Dadabhai Naoroji Road",
+        "pin": 641972,
+        "id": "6245b771215e5cf2ef98e442"
+    },
+    {
+        "_id": "6245b77f215e5cf2ef98e444",
+        "name": "Max Smith",
+        "email": "max@example.com",
+        "role": "user",
+        "mobile": 9080723033,
+        "Address": "Hazratganj, Lucknow",
+        "pin": 183581,
+        "id": "6245b77f215e5cf2ef98e444"
+    },
+    {
+        "_id": "6245b78a215e5cf2ef98e446",
+        "name": "Isabel Kirkland",
+        "email": "isabel@example.com",
+        "role": "user",
+        "mobile": 4493104708,
+        "Address": "Mall Road, Shimla",
+        "pin": 309500,
+        "id": "6245b78a215e5cf2ef98e446"
+    },
+    {
+        "_id": "6245b799215e5cf2ef98e448",
+        "name": "Alexander Jones",
+        "email": "alex@example.com",
+        "role": "user",
+        "mobile": 1044145244,
+        "Address": "Colaba causeway, Mumbai",
+        "pin": 283126,
+        "id": "6245b799215e5cf2ef98e448"
+    },
+    {
+        "_id": "6245b7ab215e5cf2ef98e44a",
+        "name": "Eduardo Hernandez",
+        "email": "edu@example.com",
+        "role": "user",
+        "mobile": 5725909268,
+        "Address": "Connaught Place, New Delhi",
+        "pin": 299266,
+        "id": "6245b7ab215e5cf2ef98e44a"
+    },
+    {
+        "_id": "6245b7bd215e5cf2ef98e44c",
+        "name": "John Riley",
+        "email": "john@example.com",
+        "role": "user",
+        "mobile": 1211580931,
+        "Address": "Dadabhai Naoroji Road, Mumbai",
+        "pin": 786184,
+        "id": "6245b7bd215e5cf2ef98e44c"
+    },
+    {
+        "_id": "6245b7ce215e5cf2ef98e44e",
+        "name": "Lisa Brown",
+        "email": "lisa@example.com",
+        "role": "user",
+        "mobile": 5376685680,
+        "Address": "Orkkatteri Eramala Road",
+        "pin": 922068,
+        "id": "6245b7ce215e5cf2ef98e44e"
+    }
+]

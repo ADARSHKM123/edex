@@ -88,4 +88,6 @@ exports.getAll = Model =>
         data: doc
       }
     });
+    // res.status(200).render('index',{admin:false,login:true})
+    // res.status(200).render('product',{admin:false,login:true})
   });

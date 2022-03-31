@@ -12,6 +12,12 @@ const filterObj = (obj, ...allowedFields) => {
     });
     return newObj;
   };
+
+
+  exports.getMe= (req,res,next)=>{
+    req.params.id = req.user.id;
+    next();
+  }
   
 
 exports.updateMe = catchAsync(async (req, res, next) => {
@@ -60,7 +66,8 @@ exports.createUser = (req,res,next)=>{
     })
 }
 
-exports.getUser=handle.getOne(User,{ path:'mycart' });
+exports.getUser=handle.getOne(User);
+// exports.getUser=handle.getOne(User,{ path:'mycart' });
 exports.getAllusers = handle.getAll(User);
 exports.updateUser = handle.updateOne(User);
 exports.deleteUser = handle.deleteOne(User);

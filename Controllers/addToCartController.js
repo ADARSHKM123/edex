@@ -47,14 +47,14 @@ exports.addToCart = catchAsync(async(req,res,next)=>{
         return res.status(200).json(newCart);
       }
     } catch (err) {
-      console.log(err);
+      console.log(err); 
       res.status(500).json("Something went wrong",err);
     }
   });
 
    exports.getAllCart=catchAsync(async(req,res,next)=>{
      const CartItems =await Cart.find();
-     res.status(200).json({
+     res.status(200).json({ 
        length:CartItems.length,
        data:{
          CartItems
