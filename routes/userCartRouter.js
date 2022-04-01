@@ -13,5 +13,14 @@ router.route('/')
 .get(addToCartController.getMyCart);
 
 
+router.route('/deleteCartItem/:id')
+.patch(addToCartController.deleteItem)
+
+router.route('/deleteCart/:id')
+.delete(addToCartController.deleteMycart)
+
+
+
+
 module.exports = router
   
