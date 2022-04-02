@@ -4,7 +4,6 @@ const handle = require('../Controllers/handlefactory');
 
 
 
-
 exports.getProduct = handle.getOne(Product,{ path:'reviews' });
 exports.addProduct = handle.createOne(Product);
 exports.getAllProduct = handle.getAll(Product);
@@ -14,4 +13,4 @@ exports.deleteProduct = handle.deleteOne(Product);
 
 exports.productlist = catchAsync(async (req, res, next) => {
    res.status(200).render('admin/view-products',{admin:true});
-});
+}); 

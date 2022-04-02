@@ -84,28 +84,28 @@ exports.getCart = catchAsync(async (req, res, next) => {
 exports.deleteItem = catchAsync(async (req, res, next) => {
   const user = req.user._id;
   const userproductId = req.params.id;
-  //  console.log(userproductId);
   let cart = await Cart.findOne({ user });
-  const allproducts = cart.products
-  let product;
-  let atualId;
-  allproducts.forEach((el, i) => {
-    // console.log(el.productId._id);
-    product = el.productId._id.equals(userproductId);
-    if (product)
-      atualId = el.productId._id
-    //  console.log(el.productId._id);
-  })
-  console.log(atualId);
-  if (!atualId)
-    return next(createError('Product is not in the cart', 404))
-  await Cart.findById({productId:atualId})
-  // await Cart.findByIdAndRemove( {productId: atualId });
-  // await Cart.findByIdAndDelete({ $pull: { products : {productId: atualId }}});
-  return res.status(204).json({
-    status: 'success',
-    //  data: cart
-    //  console.log(allproducts[0].productId._id);
+  // cart.products.forEach((el,i)=>{
+  //   console.log(el.productId._id);
+  // })
+  // const stats = await Cart.aggregate([
+  //   {
+  //     $match:{user:{$eq:'6245b62f215e5cf2ef98e429'}}
+  //   },
+  //   {
+  //     $group:{
+  //     productId
+  //     }
+  //   }
+  // ])
+ const newCart = await Cart.updateOne({user:req.user._id},{$pull:{products:{productId:req.params.id}}},{multi:true})
+
+
+  res.status(200).json({
+    status:'success',
+    data:{
+      newCart
+    }
   })
 })
 
@@ -116,7 +116,7 @@ exports.deleteMycart = catchAsync(async (req, res, next) => {
   await Cart.findByIdAndDelete({_id:cartId })
   res.status(204).json({
     status: 'success',
-    data: null
+    data: null 
   })
 })
 

@@ -14,7 +14,7 @@ router.route('/')
 
 
 router.route('/deleteCartItem/:id')
-.patch(addToCartController.deleteItem)
+.get(addToCartController.deleteItem)
 
 router.route('/deleteCart/:id')
 .delete(addToCartController.deleteMycart)
