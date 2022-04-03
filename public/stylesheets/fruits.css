@@ -13,24 +13,30 @@ body,html{
     height: auto;
 }
 .header-top{
-    background-image: url(/img/banner4.jpg);
+    background-image: url(/img/dark-banner2.jpg);
     background-position: relative;
     background-size: cover;
     position: relative;
     width: 100%;
-    min-height: 355px;
+    min-height: 476px;
+    margin-top: 50px;
     transform: translateY(-2em);
 }
+.tagie{
+padding-top: 50px;
+width: 1400px;
+}
 .purity{
+    display: inline;
     font-size: 27px;
-    padding: 60px 0px 0px 320px ;
-    color: #264403;
+    padding: 80px 0px 0px 468px;
+    color: #f0f0f0;
 }
 .purity-tag{
-    font-size: 60px;
-    padding: 2px 0px 0px 320px;
+    font-size: 50px;
+    padding: 2px 0px 0px 466px;
     font-weight: 500;
-    color: #035217;
+    color: #fdfdfd;
 }
 .product-main{
     display: grid;

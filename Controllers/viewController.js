@@ -40,3 +40,7 @@ exports.saucepage = catchAsync(async(req, res, next) => {
 exports.housepage = catchAsync(async(req, res, next) => {
   res.status(200).render('products/house',{admin:false,login:true});
 });
+
+exports.mycart = catchAsync(async(req, res, next) => {
+  res.status(200).render('users/mycart',{admin:false,login:true});
+});

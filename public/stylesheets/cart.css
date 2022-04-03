@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body,html{
+    font-family: 'Barlow', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+    /* width: 1600px; */
+    /* height: auto; */
+}
+
+
+.header h1{
+    font-family: 'Open Sans';
+    text-align: center;
+    color: #000000;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 87px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    padding: 20px;
+}
+.cart-body{
+    padding-top: 100px;
+    display: grid;
+    grid-template-columns: 870px 400px;
+    gap: 70px;
+    justify-content: center;
+}
+
+.checkout-body{
+
+    width: 374px;
+    height: 360px;
+    background: rgba(196, 196, 196, 0.33);
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 2fr;
+}
+.all-cart{
+    /* padding-top: 50px; */
+    height: 300px;
+    width: 890px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.summary,
+.total,
+.free{
+    padding: 10px;
+}
+.total,
+.free{
+    display: flex;
+    gap: 200px;
+}
+.bottom{
+    background: rgba(196, 196, 196, 0.43);
+}
+.checkout-btn{
+    padding-top: 24px;
+    width: 375px;
+}
+.bottom-btn{
+    width: 375px;
+    padding: 25px 150px 25px 150px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    align-content: center;
+    cursor: pointer;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    background: #088315cf;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+}
+.cart-items-body{
+    /* background-color: #ff1e00; */
+}
+.row{
+    display: grid;
+    grid-template-columns: 350px 150px 200px 100px 100px;
+    align-items: center;
+}
+.haeading{
+display: grid;
+height: 30px;
+grid-template-columns: 350px 150px 200px 100px;
+}
+.product-img{
+    padding: 20px 0px 10px 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.cart-image{
+    width: 50px;
+    height: 50px;
+}
+.delete-btn{
+    width: 100px;
+    /* padding-right: 20px; */
+}
+.btn-remove{
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    background-color: #ff0b0bc0;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+.summary{
+    font-size: 20px;
+}
+.checkout-btn{
+    background-color: #fff;
+}

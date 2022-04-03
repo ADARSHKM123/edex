@@ -26,4 +26,7 @@ router.route('/sauce')
 router.route('/house')
 .get(viewController.housepage)
 
+router.route('/mycart')
+.get(viewController.mycart)
+
 module.exports = router;         
