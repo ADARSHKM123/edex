@@ -81,13 +81,13 @@ exports.getAll = Model =>
     const doc = await features.query;
 
     // SEND RESPONSE
-    // res.status(200).json({
-    //   status: 'success',
-    //   results: doc.length,
-    //   data: {
-    //     data: doc
-    //   } 
-    // });
-    res.status(200).render('index',{admin:false,login:true})
+    res.status(200).json({
+      status: 'success',
+      results: doc.length,
+      data: {
+        data: doc
+      } 
+    });
+    // res.status(200).render('index',{admin:false,login:true})
     // res.status(200).render('product',{admin:false,login:true})
   });

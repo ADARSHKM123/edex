@@ -8,7 +8,7 @@ const async = require('hbs/lib/async');
 //Add To Cart /////////////////////////////////////////////////////////////
 
 exports.addToCart = catchAsync(async (req, res, next) => {
-  const user = req.user._id; 
+  const user = req.user._id;
   if (!req.body.productId) req.body.productId = req.params.productId;
   const { productId, quantity, name, price } = req.body;
   try {
@@ -85,26 +85,12 @@ exports.deleteItem = catchAsync(async (req, res, next) => {
   const user = req.user._id;
   const userproductId = req.params.id;
   let cart = await Cart.findOne({ user });
-  // cart.products.forEach((el,i)=>{
-  //   console.log(el.productId._id);
-  // })
-  // const stats = await Cart.aggregate([
-  //   {
-  //     $match:{user:{$eq:'6245b62f215e5cf2ef98e429'}}
-  //   },
-  //   {
-  //     $group:{
-  //     productId
-  //     }
-  //   }
-  // ])
- const newCart = await Cart.updateOne({user:req.user._id},{$pull:{products:{productId:req.params.id}}},{multi:true})
-
-
+  await Cart.updateOne({ user: req.user._id }, { $pull: { products: { productId: req.params.id } } }, { multi: true })
+  const cartItems = await Cart.findOne({ user: user })
   res.status(200).json({
-    status:'success',
-    data:{
-      newCart
+    status: 'success',
+    data: {
+      cartItems
     }
   })
 })
@@ -113,10 +99,10 @@ exports.deleteItem = catchAsync(async (req, res, next) => {
 //Delete My Cart ////////////////////////////////////////////////////
 exports.deleteMycart = catchAsync(async (req, res, next) => {
   const cartId = req.params.id;
-  await Cart.findByIdAndDelete({_id:cartId })
+  await Cart.findByIdAndDelete({ _id: cartId })
   res.status(204).json({
     status: 'success',
-    data: null 
+    data: null
   })
 })
 
