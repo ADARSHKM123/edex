@@ -53,11 +53,14 @@
 </div> --}}
 <h2>Best Sellers</h2>
 <div class="container-card">
+  {{#each products}}
+   {{#each this as |value key|}}
+  
    <div class="outer">
      <a href="">
      <div class="img-box">
       <div class="card-img">
-        <img src="/images/01-02-287x373.jpg" class="card-imgs" alt="">
+        <img src="/img/{{value.image}}" class="card-imgs" alt="">
       </div>
      </div>
      </a>
@@ -70,8 +73,8 @@
         <span class="fa fa-star"></span>
       </div>
       <div class="desc">
-        <p>Capsicum</p>
-        <p><span>&#8377;</span>12.0</p>
+        <p>{{value.name}}</p>
+        <p><span>&#8377;</span>{{value.price}}</p>
       </div>
       <a href="" class="addToCart-link">
       <div class="addto-cart"><p>Add To Cart</p></div>
@@ -79,7 +82,10 @@
        </div>
    </div>
 
-   <div class="outer">
+   {{/each}}
+   {{/each}}
+
+   {{!-- <div class="outer">
      <a href="">
      <div class="img-box">
       <div class="card-img">
@@ -103,8 +109,8 @@
       <div class="addto-cart"><p>Add To Cart</p></div>
       </a>
        </div>
-   </div>
- 
+   </div> --}}
+{{!--  
     <div class="outer">
     <a href="">
      <div class="img-box">
@@ -129,7 +135,7 @@
       <div class="addto-cart"><p>Add To Cart</p></div>
       </a>
        </div>
-   </div>
+   </div> --}}
  
 </div>
 
@@ -183,6 +189,6 @@
 
 <section class="banner-tag">
   <div class="banner">
-    <img src="/images/banner.png" class="banner-1_img" alt="">
+   <p class="tagline">So fresh, so clean, so bright, it’ll make your mouth water!</p>
   </div>
 </section>

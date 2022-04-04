@@ -21,10 +21,10 @@ const sendEmail =async options=>{
         subject:options.subject, 
         text:options.message,
         //html
-    }
+    } 
 
-    //3)Actually send the email
-   await transporter.sendMail(mailOptoins)
+    //3)Actually send the email 
+   await transporter.sendMail(mailOptoins) 
 };
 
 module.exports = sendEmail;

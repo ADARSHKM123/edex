@@ -7,7 +7,7 @@ const logger = require('morgan');
 const hbs=require('express-handlebars');
 const AppError = require('./Util/appError');
 const globalErrorHandler = require('./Controllers/errorController');
-const ratelimit = require('express-rate-limit');
+// const ratelimit = require('express-rate-limit');
 
 const productRoutes = require('./routes/productRoutes');
 const usersRouter = require('./routes/userRoutes');
@@ -16,6 +16,10 @@ const adminRouter = require('./routes/adminRouter');
 const userCartRouter = require('./routes/userCartRouter');
 const viewRouter=require('./routes/viewRouter');
 const reviewRouter = require('./routes/reviewRoutes');
+
+
+
+
 
 
 const { error } = require('console');
@@ -33,8 +37,16 @@ if (process.env.NODE_ENV === 'development') {
 //   message:'Too many request from this IP, try again after 1  hour!'
 // })
 // app.use('/',limiter);
+//////////////////////////Handlebars /////////////////////
+// const Handlebars = require('handlebars')
+// const exphbs  = require('express-handlebars');
+// const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
 
 
+// app.engine('handlebars', exphbs.engine({
+//     handlebars: allowInsecurePrototypeAccess(Handlebars)
+// }));
+ 
 
    
 // view engine setup 
@@ -42,7 +54,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.engine('hbs', hbs.engine({extname: 'hbs',defaultLayout: 'layout', layoutsDir:__dirname + '/views/layout',partialssDir:__dirname + '/views/partials'}));
 
-
+ 
 
 
 

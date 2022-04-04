@@ -1,5 +1,5 @@
-const authController= require('../Controllers/authController');
-const userController=require('../Controllers/userController');
+const authController = require('../Controllers/authController');
+const userController = require('../Controllers/userController');
 
 
 var express = require('express');
@@ -15,7 +15,7 @@ router.route('/resetPassword/:token').patch(authController.resetPassword)
 
 // Protect all routes after this middleware
 router.use(authController.protect);
-router.get('/me',userController.getMe,userController.getUser)
+router.get('/me', userController.getMe, userController.getUser)
 router.patch('/updateMyPassword', authController.updatePassword);
 router.patch('/updateMe', userController.updateMe);
 router.delete('/deleteMe', userController.deleteMe);
@@ -23,15 +23,14 @@ router.delete('/deleteMe', userController.deleteMe);
 
 // router.use(authController.restrictTo('admin'));
 router.
-route('/')
-.get(authController.restrictTo('admin'),userController.getAllusers)
-.post(userController.createUser)
+    route('/')
+    .get(authController.restrictTo('admin'), userController.getAllusers)
+    .post(userController.createUser)
 
 router
-.route('/:id')
-.get(userController.getUser)
-.patch(userController.updateUser)
-.delete(userController.deleteUser)
+    .route('/:id')
+    .get(userController.getUser)
+    .patch(userController.updateUser)
+    .delete(userController.deleteUser)
 
 module.exports = router;
- 

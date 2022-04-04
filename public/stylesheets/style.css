@@ -113,7 +113,9 @@ nav ul li a:hover {
   text-decoration: none;
 }
 /* #ec5e95 */
-
+/* nav{
+  display: flex;
+} */
 /* stroke */
 nav ul li a
  {
@@ -140,9 +142,9 @@ header span{
   gap: 21px;
   transform: translate(85%, -402%);
 }
-.hero-sect{
+/* .hero-sect{
   
-}
+} */
 
 header span li {
   list-style: none;
@@ -163,6 +165,61 @@ header span .login{
   color: #f8f7f6;
   background-color: #F17300;
 }
+.user-profile{
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+.user-account{
+  transform: translateY(-10px);
+  padding-left: 100px;
+  padding-bottom: 10px;
+  position: relative;
+  display: inline-block;
+}
+.my-acc:hover,
+.log-out:hover{
+  text-decoration: none;
+  color: #0d4203;
+  background-color: #e9c155;
+}
+.user-account:hover{
+text-decoration: none;
+}
+.default-hidden{
+  display: none; 
+}
+.dropdown-content {
+  top: 226px;
+  right: 137px;
+  position: absolute;
+  background-color: #b1dfafda;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+ }
+ .span-user{
+   margin-top: 155px;
+ }
+/* .dropdown{
+  transform: translateY(100px);
+  transform: translateX(500px);
+  
+} */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.user-account:hover .dropdown-content {display: block;}
+/* .user-account a:hover {background-color: #ddd;}
+
+
+.dropdown{
+  list-style: none;
+} */
+/* .dropdown:hover .dropbtn {background-color: #3e8e41;} */
 /* .hero-img{
   background: url('../images/Main-banner-1-1903x852.jpg') no-repeat;
   background-size: cover;
@@ -590,24 +647,18 @@ padding-top: 10px;
 
 .banner{
   max-width: 100%;
-  height: auto;
-  padding-top: 65px;
-padding-bottom: 65px;
+  height: 550px;
+  margin: 75px 0px 100px 0px;
+ background-image: url(/img/banner.png);
 }
-.banner-1_img{
-  max-width: 100%;
-  height: auto;
+.banner p{
+  font-style: normal;
+  padding: 170px 0px 0px 224px;
+  font-size: 52px;
+  font-weight: 600;
+  width: 1000px;
+  text-align: center;
 }
-
-.banner::after{
-  content: 'A world of groceries';
-  position: relative;
-  color: #104911;
-  top: 0;
-  right: 0;
-}
-
-
 /* //Login */
 
 
