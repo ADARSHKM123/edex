@@ -7,20 +7,20 @@ const Product =require('../Models/productModel');
 //Home /////////////////////////////////////
 exports.home = catchAsync(async(req,res,next)=>{
   const products = await Product.find();
-  const producers = [
-    {
-      name:"Adarsh",
-      image:"8.jpg",
-      price:12.0
-    },
-    {
-      name:"kaef",
-      image:"6.jpg",
-      price:22.0
-    }
-  ]
+  // const producers = [
+  //   {
+  //     name:"Adarsh",
+  //     image:"8.jpg",
+  //     price:12.0
+  //   },
+  //   {
+  //     name:"kaef",
+  //     image:"6.jpg",
+  //     price:22.0
+  //   }
+  // ]
   res.status(200).render('index',{admin:false,login:true,products:products})
-})
+});
 
 
 //LoginPage //////////////////////////////////
@@ -37,7 +37,8 @@ exports.product = catchAsync(async(req, res, next) => {
   
 //productPage ////////////////////////////////
 exports.vegitablepage = catchAsync(async(req, res, next) => {
-    res.status(200).render('products/vegitables',{admin:false,login:true});
+  const products = await Product.find();
+    res.status(200).render('products/vegitables',{admin:false,login:true,products});
   });
   
 

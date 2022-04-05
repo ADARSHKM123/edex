@@ -54,13 +54,12 @@
 <h2>Best Sellers</h2>
 <div class="container-card">
   {{#each products}}
-   {{#each this as |value key|}}
   
    <div class="outer">
      <a href="">
      <div class="img-box">
       <div class="card-img">
-        <img src="/img/{{value.image}}" class="card-imgs" alt="">
+        <img src="/img/{{this.image}}" class="card-imgs" alt="">
       </div>
      </div>
      </a>
@@ -73,8 +72,8 @@
         <span class="fa fa-star"></span>
       </div>
       <div class="desc">
-        <p>{{value.name}}</p>
-        <p><span>&#8377;</span>{{value.price}}</p>
+        <p>{{this.name}}</p>
+        <p><span>&#8377;</span>{{this.price}}</p>
       </div>
       <a href="" class="addToCart-link">
       <div class="addto-cart"><p>Add To Cart</p></div>
@@ -82,7 +81,6 @@
        </div>
    </div>
 
-   {{/each}}
    {{/each}}
 
    {{!-- <div class="outer">
