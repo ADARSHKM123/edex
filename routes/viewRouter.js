@@ -9,7 +9,7 @@ router.route('/')
 router.route('/login')
 .get(viewController.login)
 
-router.route('/productpage')
+router.route('/productpage/:slug')
 .get(viewController.product)
 
 

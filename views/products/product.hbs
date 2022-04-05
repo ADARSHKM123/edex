@@ -13,12 +13,13 @@
 
 <body>
     <section class="product-page">
+
         <div class="wrapper">
             <div class="product-image">
-                <img src="/img/16.jpg" class="apple-pro" alt="apple-image">
+                <img src="/img/{{product.image}}" class="apple-pro" alt="apple-image">
             </div>
             <div class="product-details">
-                <p class="product-name">Apple From Kashmir</p>
+                <p class="product-name">{{product.name}}</p>
                 <hr class="line">
                 <div class="star-rating">
                     <div class="stars">
@@ -36,10 +37,10 @@
                 </div>
                 <div class="price-tag">
                     <p class="dup-price"><span>&#8377;</span>18.00</p>
-                    <p class="real-price"><span>&#8377;</span>12.00</p>
+                    <p class="real-price"><span>&#8377;</span>{{product.price}}</p>
                 </div>
                 <div class="description">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea, ullam architecto odit quibusdam</p>
+                    <p>{{product.description}}</p>
                 </div>
                 <div class="listing-description">
                     <ul>
@@ -89,6 +90,7 @@
                 </div>
             </div>
         </div>
+ 
     </section>
     <script src="https://kit.fontawesome.com/ccdb6a7bcb.js" crossorigin="anonymous"></script>
 </body>

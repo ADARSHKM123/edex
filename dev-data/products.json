@@ -87,6 +87,7 @@
       "image": "5.jpg",
       "price": 11.14,
       "rating": 4,
+      "bestseller":true,
       "id": "621dc40fd67655c95f52a511"
   },
   {
@@ -117,6 +118,7 @@
       "image": "13.jpg",
       "price": 13.02,
       "rating": 2,
+      "bestseller":true,
       "id": "621dc40fd67655c95f52a519"
   },
   {
@@ -357,6 +359,7 @@
       "image": "36.jpg",
       "price": 28.96,
       "rating": 5,
+      "bestseller":true,
       "id": "621dc40fd67655c95f52a530"
   },
   {

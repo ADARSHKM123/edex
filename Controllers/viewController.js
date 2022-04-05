@@ -7,19 +7,9 @@ const Product =require('../Models/productModel');
 //Home /////////////////////////////////////
 exports.home = catchAsync(async(req,res,next)=>{
   const products = await Product.find();
-  // const producers = [
-  //   {
-  //     name:"Adarsh",
-  //     image:"8.jpg",
-  //     price:12.0
-  //   },
-  //   {
-  //     name:"kaef",
-  //     image:"6.jpg",
-  //     price:22.0
-  //   }
-  // ]
-  res.status(200).render('index',{admin:false,login:true,products:products})
+const newProduct = products.filter(el=>el.bestseller === true)
+ console.log(newProduct);
+  res.status(200).render('index',{admin:false,login:true,products:newProduct})
 });
 
 
@@ -31,7 +21,12 @@ exports.login = catchAsync(async(req, res, next) => {
 
 //Product //////////////////////////////////
 exports.product = catchAsync(async(req, res, next) => {
-    res.status(200).render('products/product',{admin:false,login:true});
+  const product = await Product.findOne({slug:req.params.slug}).populate({
+    path:'reviews',
+    fields:'review rating user'
+})
+console.log(product);
+    res.status(200).render('products/product',{admin:false,login:true,product});
   });
   
   
