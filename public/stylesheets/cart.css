@@ -16,14 +16,21 @@ body,html{
 
 .header h1{
     font-family: 'Open Sans';
-    text-align: center;
+    text-align: left;
     color: #000000;
     font-style: normal;
     font-weight: 400;
-    font-size: 60px;
-    line-height: 87px;
-    text-align: center;
+    font-size: 50px;
+    line-height: 87px; 
+    margin-left: 100px;
     letter-spacing: 0.05em;
+}
+.under-line{
+    width: 220px;
+    margin-left: 100px;
+    border: solid 1px #000;
+    height: 0;
+    background-color: #000;
 }
 .cart-body{
     padding-top: 100px;

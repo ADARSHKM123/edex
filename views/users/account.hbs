@@ -1,32 +1,41 @@
-<section>
-        <main class="main">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/stylesheets/account.css" rel="stylesheet">
+    <title>Account</title>
+</head>
+<body>
+    <main class="main">
         <div class="user-view">
             <nav class="user-view__menu">
                 <ul class="side-nav">
                     <li class="side-nav--active"><a href="#"><svg>
-                                <use xlink:href="img/icons.svg#icon-settings"></use>
+                                <use xlink:href="/img/icons.svg#icon-settings"></use>
                             </svg>Settings</a></li>
                     <li><a href="#"><svg>
-                                <use xlink:href="img/icons.svg#icon-briefcase"></use>
+                                <use xlink:href="/img/icons.svg#icon-briefcase"></use>
                             </svg>My ORDERS</a></li>
                     <li><a href="#"><svg>
-                                <use xlink:href="img/icons.svg#icon-star"></use>
+                                <use xlink:href="/img/icons.svg#icon-star"></use>
                             </svg>My reviews</a></li>
                     <li><a href="#"><svg>
-                                <use xlink:href="img/icons.svg#icon-credit-card"></use>
+                                <use xlink:href="/img/icons.svg#icon-credit-card"></use>
                             </svg>Billing</a></li>
                 </ul>
                 <div class="admin-nav">
                     <h5 class="admin-nav__heading">Admin</h5>
                     <ul class="side-nav">
                         <li><a href="#"><svg>
-                                    <use xlink:href="img/icons.svg#icon-map"></use>
+                                    <use xlink:href="/img/icons.svg#icon-map"></use>
                                 </svg>Manage tours</a></li>
                         <li><a href="#"><svg>
-                                    <use xlink:href="img/icons.svg#icon-users"></use>
+                                    <use xlink:href="/img/icons.svg#icon-users"></use>
                                 </svg>Manage users</a></li>
                         <li><a href="#"><svg>
-                                    <use xlink:href="img/icons.svg#icon-star"></use>
+                                    <use xlink:href="/img/icons.svg#icon-star"></use>
                                 </svg>Manage reviews</a></li>
                         <!-- <li><a href="#"><svg>
                                     <use xlink:href="img/icons.svg#icon-briefcase"></use>
@@ -40,7 +49,7 @@
                     <form class="form form-user-data">
                         <div class="form__group"><label class="form__label" for="name">Name</label><input class="form__input" id="name" type="text" value="Adarsh KM" required="required" /></div>
                         <div class="form__group ma-bt-md"><label class="form__label" for="email">Email address</label><input class="form__input" id="email" type="email" value="admin@natours.io" required="required" /></div>
-                        <div class="form__group form__photo-upload"><img class="form__user-photo" src="img/user.jpg" alt="User photo" /><a class="btn-text" href="">Choose new photo</a></div>
+                        <div class="form__group form__photo-upload"><img class="form__user-photo" src="/img/user.jpg" alt="User photo" /><a class="btn-text" href="">Choose new photo</a></div>
                         <div class="form__group right"><button class="btn btn--small btn--green">Save settings</button></div>
                     </form>
                 </div>
@@ -57,4 +66,6 @@
             </div>
         </div>
     </main>
-</section>
+    <script src="/javascript/account.js"></script>
+</body>
+</html>

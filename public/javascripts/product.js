@@ -1,3 +1,5 @@
+
+
 let quantity = document.querySelector('.quantity').textContent
 
 

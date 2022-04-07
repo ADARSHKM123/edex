@@ -83,7 +83,9 @@ exports.protect=catchAsync(async(req,res,next)=>{
    {
      token =req.headers.authorization.split(' ')[1];
 
-   }    
+   }else if(req.cookies.jwt){
+     token = req.cookies.jwt;
+   }
    console.log(`token:${token}`);
    if(!token){
        return next(createError('You are not logged in! please login to get access',401))
@@ -209,6 +211,7 @@ exports.resetPassword = catchAsync(async (req, res, next) => {
 
 
 
+///////////////////Updated Password ////////////////////////////////////
 
 exports.updatePassword = catchAsync(async (req, res, next) => {
   // 1) Get user from collection

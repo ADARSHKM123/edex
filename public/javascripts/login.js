@@ -1,7 +1,6 @@
-console.log('login')
+import axios from 'axios';
 
-const login = async (email,password)=>{
-    console.log(email,password);
+export const login = async (email,password)=>{
     try{
         const result =  await axios({
               method:'POST',
@@ -13,19 +12,8 @@ const login = async (email,password)=>{
               }
           });
           console.log(result);
-    } catch(errr){
+        //   if(result.response.data.statusText)
+    } catch(err){
         console.log(err.response.data);
     }
 }
-
-
-document.querySelector('.form').addEventListener('submit', e => {
-    e.preventDefault();
-    console.log('clicked');
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    console.log(email)
-    console.log(password);
-    login(email, password);
-})    
-

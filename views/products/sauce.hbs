@@ -20,7 +20,7 @@
             <div class="tagie">
             </div>
         </div>
-        <div class="product-main container-main">
+         <div class="product-main container-main">
             <div class="filter-page">
                 <div class="filter">
                     <p>Filter by Price</p>
@@ -75,13 +75,14 @@
                     </div>
                 </div>
             </div>
-            <div class="main-page">
-
+           <div class="main-page">
+               
+               {{#each products}}
                 <div class="card-product">
-                    <a href="">
+                    <a href="/api/v1/user/productpage/{{this.slug}}">
                         <div class="img-box-inner">
                             <div class="card-img-inner">
-                                <img src="/img/18.jpg" class="img-card-inner" alt="">
+                                <img src="/img/{{this.image}}" class="img-card-inner" alt="">
                             </div>
                         </div>
                     </a>
@@ -94,8 +95,8 @@
                             <span class="fa fa-star"></span>
                         </div>
                         <div class="desc-data">
-                            <p>Tomato</p>
-                            <p><span>&#8377;</span>12.0</p>
+                            <p>{{this.name}}</p>
+                            <p><span>&#8377;</span>{{this.price}}</p>
                         </div>
                         <a href="" class="addToCart-link-tag">
                             <div class="addto-cart-bttn">
@@ -104,167 +105,12 @@
                         </a>
                     </div>
                 </div>
-
-
-
-                <div class="card-product">
-                    <a href="">
-                        <div class="img-box-inner">
-                            <div class="card-img-inner">
-                                <img src="/img/18.jpg" class="img-card-inner" alt="">
-                            </div>
-                        </div>
-                    </a>
-                    <div class="review-star">
-                        <div class="icons-star">
-                            <span class="fa fa-star checked-star"></span>
-                            <span class="fa fa-star checked-star"></span>
-                            <span class="fa fa-star checked-star"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                        </div>
-                        <div class="desc-data">
-                            <p>Tomato</p>
-                            <p><span>&#8377;</span>12.0</p>
-                        </div>
-                        <a href="" class="addToCart-link-tag">
-                            <div class="addto-cart-bttn">
-                                <p>Add To Cart</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-
-
-                <div class="card-product">
-                    <a href="">
-                        <div class="img-box-inner">
-                            <div class="card-img-inner">
-                                <img src="/img/18.jpg" class="img-card-inner" alt="">
-                            </div>
-                        </div>
-                    </a>
-                    <div class="review-star">
-                        <div class="icons-star">
-                            <span class="fa fa-star checked-star"></span>
-                            <span class="fa fa-star checked-star"></span>
-                            <span class="fa fa-star checked-star"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                        </div>
-                        <div class="desc-data">
-                            <p>Tomato</p>
-                            <p><span>&#8377;</span>12.0</p>
-                        </div>
-                        <a href="" class="addToCart-link-tag">
-                            <div class="addto-cart-bttn">
-                                <p>Add To Cart</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-
-
-                <div class="card-product">
-                    <a href="">
-                        <div class="img-box-inner">
-                            <div class="card-img-inner">
-                                <img src="/img/18.jpg" class="img-card-inner" alt="">
-                            </div>
-                        </div>
-                    </a>
-                    <div class="review-star">
-                        <div class="icons-star">
-                            <span class="fa fa-star checked-star"></span>
-                            <span class="fa fa-star checked-star"></span>
-                            <span class="fa fa-star checked-star"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                        </div>
-                        <div class="desc-data">
-                            <p>Tomato</p>
-                            <p><span>&#8377;</span>12.0</p>
-                        </div>
-                        <a href="" class="addToCart-link-tag">
-                            <div class="addto-cart-bttn">
-                                <p>Add To Cart</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-
-
-                <div class="card-product">
-                    <a href="">
-                        <div class="img-box-inner">
-                            <div class="card-img-inner">
-                                <img src="/img/18.jpg" class="img-card-inner" alt="">
-                            </div>
-                        </div>
-                    </a>
-                    <div class="review-star">
-                        <div class="icons-star">
-                            <span class="fa fa-star checked-star"></span>
-                            <span class="fa fa-star checked-star"></span>
-                            <span class="fa fa-star checked-star"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                        </div>
-                        <div class="desc-data">
-                            <p>Tomato</p>
-                            <p><span>&#8377;</span>12.0</p>
-                        </div>
-                        <a href="" class="addToCart-link-tag">
-                            <div class="addto-cart-bttn">
-                                <p>Add To Cart</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-
-                <div class="card-product">
-                    <a href="">
-                        <div class="img-box-inner">
-                            <div class="card-img-inner">
-                                <img src="/img/18.jpg" class="img-card-inner" alt="">
-                            </div>
-                        </div>
-                    </a>
-                    <div class="review-star">
-                        <div class="icons-star">
-                            <span class="fa fa-star checked-star"></span>
-                            <span class="fa fa-star checked-star"></span>
-                            <span class="fa fa-star checked-star"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                        </div>
-                        <div class="desc-data">
-                            <p>Tomato</p>
-                            <p><span>&#8377;</span>12.0</p>
-                        </div>
-                        <a href="" class="addToCart-link-tag">
-                            <div class="addto-cart-bttn">
-                                <p>Add To Cart</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-
-
-
-
-
-
-
-
+                {{/each}}
 
             </div>
         </div>
+        {{!-- jkjnf --}}
+        
     </section>
 </body>
 

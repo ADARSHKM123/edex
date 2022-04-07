@@ -1,4 +1,5 @@
 const viewController =require('../Controllers/viewController');
+const authController=require('../Controllers/authController');
 
 var express = require('express');
 var router = express.Router();
@@ -9,9 +10,13 @@ router.route('/')
 router.route('/login')
 .get(viewController.login)
 
+router.use(authController.protect);
+
 router.route('/productpage/:slug')
 .get(viewController.product)
-
+ 
+router.route('/myacoount')
+.get(viewController.myaccount)
 
 router.route('/vegitables')
 .get(viewController.vegitablepage)

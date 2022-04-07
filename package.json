@@ -4,10 +4,14 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./server",
-    "start:prod": "set NODE_ENV=production && nodemon server.js"
+    "start:prod": "set NODE_ENV=production && nodemon server.js",
+    "watch:js": "parcel watch ./public/javascripts/index.js --out-dir ./public/javascripts/ --out-file bundle.js",
+    "bundle:js": "parcel watch ./public/javascripts/index.js --out-dir ./public/javascripts/ --out-file bundle.js"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
     "@handlebars/allow-prototype-access": "^1.0.5",
+    "a": "^2.1.2",
     "axios": "^0.26.1",
     "bcryptjs": "^2.4.3",
     "cookie-parser": "~1.4.4",
@@ -28,6 +32,7 @@
     "validator": "^13.7.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "parcel-bundler": "^1.12.5"
   }
 }
