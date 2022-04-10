@@ -1,5 +1,6 @@
 const viewController =require('../Controllers/viewController');
 const authController=require('../Controllers/authController');
+const addToCartController =require('../Controllers/addToCartController');
 
 var express = require('express');
 var router = express.Router();
@@ -14,10 +15,14 @@ router.use(authController.protect);
 
 router.route('/productpage/:slug')
 .get(viewController.product)
+
+router.route('/:productId/cart')
+.post(authController.protect,viewController.addToCart) 
+
  
 router.route('/myacoount')
 .get(viewController.myaccount)
-
+ 
 router.route('/vegitables')
 .get(viewController.vegitablepage)
 

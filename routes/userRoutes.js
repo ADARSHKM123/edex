@@ -8,6 +8,7 @@ var router = express.Router();
 /* GET users listing. */
 router.route('/signup').post(authController.signup)
 router.route('/login').post(authController.login)
+router.get('/logout', authController.logout);
 router.route('/forgotPassword').post(authController.forgotPassword)
 router.route('/resetPassword/:token').patch(authController.resetPassword)
 

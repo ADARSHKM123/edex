@@ -10,6 +10,9 @@ const async = require('hbs/lib/async');
 exports.addToCart = catchAsync(async (req, res, next) => {
   const user = req.user._id;
   if (!req.body.productId) req.body.productId = req.params.productId;
+  if(!req.body.quantity){
+    req.body.quantity = 1;
+  }
   const { productId, quantity, name, price } = req.body;
   try {
     let cart = await Cart.findOne({ user });

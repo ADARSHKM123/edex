@@ -28,6 +28,6 @@ router.route('/:productId/cart')
     .post(
         authController.protect,
         addToCartController.addToCart
-    )
+    ) 
 
 module.exports = router;
