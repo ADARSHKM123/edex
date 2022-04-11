@@ -8,6 +8,12 @@ const loginform = document.querySelector('.form');
 const logOutBtn = document.querySelector('.logout');
 let addToCart = document.querySelectorAll('.to-cart');
 const deleteItem = document.querySelectorAll('.deleting');
+
+//Cart
+const CartTotal = document.querySelectorAll('.totalPrice');
+const CartPrice = document.querySelectorAll('.price');
+const CartQuantity = document.querySelectorAll('.quantity');
+
 // const MyCartHandler = document.querySelector('.to-mycart');
 
 // const header = document.querySelector('.header');
@@ -54,3 +60,12 @@ if(deleteItem){
     //     console.log(email);
     // })
 //   }
+let newOnePrice = [];
+let newOneQty = [];
+CartPrice.forEach((e,i)=> newOnePrice[i] = e.textContent);
+console.log(newOnePrice);
+CartQuantity.forEach((e,i)=> newOneQty[i] = e.textContent);
+console.log(newOneQty);
+CartTotal.forEach((el,i)=> el.innerHTML = newOnePrice[i] * newOneQty[i]);
+
+

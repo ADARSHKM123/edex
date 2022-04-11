@@ -44,10 +44,10 @@ const cartSchema = new mongoose.Schema({
 //   return this.price*this.quantity;
 // });
 
-cartSchema.pre('save',function(next){
-  this.TotalPrice = this.productId.price * this.quantity;
-  next();
-});
+// cartSchema.pre('save',function(next){
+//   this.TotalPrice = this.productId.price * this.quantity;
+//   next();
+// });
 
 
 
