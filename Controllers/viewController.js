@@ -8,7 +8,7 @@ const Cart = require('../Models/cartItemsModel');
 exports.home = catchAsync(async(req,res,next)=>{
   const products = await Product.find();
 const newProduct = products.filter(el=>el.bestseller === true)
- console.log(newProduct);
+//  console.log(newProduct);
   res.status(200).render('index',{admin:false,login:true,products:newProduct})
 });
 
@@ -44,7 +44,7 @@ exports.vegitablepage = catchAsync(async(req, res, next) => {
       $match:{ category:{ $eq:'vegetable'}}
     }
   ])
-  console.log(products);
+  // console.log(products);
     res.status(200).render('products/vegitables',{admin:false,login:true,products});
   });
   
@@ -80,18 +80,27 @@ exports.housepage = catchAsync(async(req, res, next) => {
   ])
   res.status(200).render('products/house',{admin:false,login:true,products});
 });
-
+ 
 
 exports.mycart = catchAsync(async(req, res, next) => {
-  res.status(200).render('users/mycart',{admin:false,login:true});
+  const user = req.user._id;
+    const cartItems = await Cart.findOne({ user: user })
+    if (cartItems === null) {
+      return next(createError("No items in the cart", 400))
+    }
+    const newCart = cartItems.products;
+  // console.log(cartItems.products);
+  console.log(newCart);
+  const totalPrice = newCart.map(each=>each.quantity*each.productId.price)
+  // console.log(totalPrice);
+  res.status(200).render('users/mycart',{admin:false,login:true,newCart});
 });
 
-
+ 
 
 
 exports.addToCart = catchAsync(async (req, res, next) => {
   const user = req.user._id;
-  console.log('yesssssssssssssssssssssssssssssssssssssssssssssssssssss');
   if (!req.body.productId) req.body.productId = req.params.productId;
   if(!req.body.quantity){
     req.body.quantity = 1;

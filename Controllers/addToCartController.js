@@ -93,7 +93,7 @@ exports.deleteItem = catchAsync(async (req, res, next) => {
   res.status(200).json({
     status: 'success',
     data: {
-      cartItems
+      cartItems 
     }
   })
 })
@@ -116,6 +116,7 @@ exports.deleteMycart = catchAsync(async (req, res, next) => {
 
 exports.getMyCart = catchAsync(async (req, res, next) => {
   const user = req.user._id;
+  console.log(user);
   const cartItems = await Cart.findOne({ user: user })
   if (cartItems === null) {
     return next(createError("No items in the cart", 400))
@@ -126,5 +127,5 @@ exports.getMyCart = catchAsync(async (req, res, next) => {
     data: {
       cartItems
     }
-  })
+  }) 
 });

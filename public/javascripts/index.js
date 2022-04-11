@@ -1,11 +1,14 @@
 
 import '@babel/polyfill';
 import { login,logout } from './login';
-import {addtoCart} from './addToCart';
+import {addtoCart,myCart,deleteCartItem} from './Cart';
+
 
 const loginform = document.querySelector('.form');
 const logOutBtn = document.querySelector('.logout');
-let addToCart = document.querySelectorAll('.addto-cart');
+let addToCart = document.querySelectorAll('.to-cart');
+const deleteItem = document.querySelectorAll('.deleting');
+// const MyCartHandler = document.querySelector('.to-mycart');
 
 // const header = document.querySelector('.header');
 if(loginform)
@@ -19,15 +22,28 @@ document.querySelector('.form').addEventListener('submit', e => {
 if(logOutBtn){
     logOutBtn.addEventListener('click',logout)   
 } 
+
 if(addToCart){
     addToCart.forEach(btn=>btn.addEventListener('click',e=>{
         console.log('clicked');
         addtoCart(btn.dataset.id)
     }))
-  
 }
 
- 
+if(deleteItem){
+    deleteItem.forEach(btn=>btn.addEventListener('click',e=>{
+        console.log(btn.dataset.id);
+        deleteCartItem(btn.dataset.id);
+    }))
+}
+// if(MyCartHandler){
+//     console.log('add to cart');
+//     MyCartHandler.addEventListener('click',e=>{
+//         console.log('clicked');
+//         myCart
+//     }); 
+// }
+  
 
 //Account ///////////////////////////////////////////////////////
 // window.onload=function(){

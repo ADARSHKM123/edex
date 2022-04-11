@@ -17,9 +17,9 @@ router.route('/deleteCartItem/:id')
     .get(addToCartController.deleteItem)
 
 router.route('/deleteCart/:id')
-    .delete(addToCartController.deleteMycart)
+    .delete(authController.protect,addToCartController.deleteMycart)
 
-
+ 
 
 
 module.exports = router

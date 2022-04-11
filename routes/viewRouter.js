@@ -37,6 +37,6 @@ router.route('/house')
 .get(viewController.housepage)
 
 router.route('/mycart')
-.get(viewController.mycart)
+.get(authController.protect,viewController.mycart)
 
 module.exports = router;         

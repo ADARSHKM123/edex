@@ -19,7 +19,8 @@ const cartSchema = new mongoose.Schema({
             default:1
           },
           price: Number,
-        }
+          totalPrice:Number
+        } 
       ],
       active: {
         type: Boolean,
@@ -38,21 +39,27 @@ const cartSchema = new mongoose.Schema({
 )
 
 
-// cartSchema.virtual('TotalPrice').get(function() {
-//   return this.productId.price * this.quantity;
+
+// cartSchema.virtual('totalPrice').get(function () {
+//   return this.price*this.quantity;
 // });
 
+cartSchema.pre('save',function(next){
+  this.TotalPrice = this.productId.price * this.quantity;
+  next();
+});
+
+
+
 cartSchema.pre(/^find/,function(next){
-  this.populate('user')
+  this.populate({
+    path:'user'
+  }).populate({path:'products',populate:{
+      path: 'productId'
+      }})
   next()
 })
 
-cartSchema.pre(/^find/,function(next){
-  this.populate({path:'products',populate:{
-    path: 'productId'
-  }}); 
-  next()
-})
 
 // cartSchema.pre('save', async function(next){
 //  const productPromises =  this.products.map(async each=> await User.findById(each.productId))
