@@ -16,6 +16,8 @@ const adminRouter = require('./routes/adminRouter');
 const userCartRouter = require('./routes/userCartRouter');
 const viewRouter=require('./routes/viewRouter');
 const reviewRouter = require('./routes/reviewRoutes');
+const bookingRouter = require('./routes/bookingRouter');
+
 const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access')
 const Handlebars = require('handlebars')
 
@@ -82,6 +84,7 @@ app.use('/api/v1/admin', adminRouter);
 app.use('/api/v1/mycart', userCartRouter);  
 app.use('/api/v1/user', viewRouter);  
 app.use('/api/v1/reviews', reviewRouter);  
+app.use('/api/v1/booking', bookingRouter);  
  
 
 

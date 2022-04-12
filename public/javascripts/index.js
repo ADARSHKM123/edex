@@ -10,9 +10,10 @@ let addToCart = document.querySelectorAll('.to-cart');
 const deleteItem = document.querySelectorAll('.deleting');
 
 //Cart
-const CartTotal = document.querySelectorAll('.totalPrice');
-const CartPrice = document.querySelectorAll('.price');
-const CartQuantity = document.querySelectorAll('.quantity');
+const CartTotal = document.querySelectorAll('.total-each');
+const CartPrice = document.querySelectorAll('.price-each'); 
+const CartQuantity = document.querySelectorAll('.quantityEach');
+const grantTotal = document.querySelector('.grant-total');
 
 // const MyCartHandler = document.querySelector('.to-mycart');
 
@@ -31,7 +32,6 @@ if(logOutBtn){
 
 if(addToCart){
     addToCart.forEach(btn=>btn.addEventListener('click',e=>{
-        console.log('clicked');
         addtoCart(btn.dataset.id)
     }))
 }
@@ -62,10 +62,14 @@ if(deleteItem){
 //   }
 let newOnePrice = [];
 let newOneQty = [];
+let newCartTtl = [];
 CartPrice.forEach((e,i)=> newOnePrice[i] = e.textContent);
-console.log(newOnePrice);
 CartQuantity.forEach((e,i)=> newOneQty[i] = e.textContent);
-console.log(newOneQty);
 CartTotal.forEach((el,i)=> el.innerHTML = newOnePrice[i] * newOneQty[i]);
-
-
+// Cart Grant Total 
+CartTotal.forEach((e,i)=>  newCartTtl[i] = e.textContent);
+grantTotal.innerHTML = newCartTtl.reduce(getSum, 0);
+function getSum(total, num) {
+  return total + Math.round(num);
+}
+ 

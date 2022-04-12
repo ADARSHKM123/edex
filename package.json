@@ -29,6 +29,7 @@
     "nodemailer": "^6.7.2",
     "rate-limit": "^0.1.1",
     "slugify": "^1.6.5",
+    "stripe": "^7.0.0",
     "validator": "^13.7.0"
   },
   "devDependencies": {

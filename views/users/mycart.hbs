@@ -25,21 +25,20 @@
  
 
     {{#each newCart}}
-    
     <hr>
     <div class="row">
     <div class="product-img">
         <img class="cart-image" src="/img/{{productId.image}}" alt="cart-product-image">
         <p>{{productId.name}}</p>
     </div>
-    <div class="price">
+    <div class="price-each">
         <p>{{productId.price}}</p>
     </div>
-    <div class="quantity">
+    <div class="quantityEach">
         <p>{{this.quantity}}</p>
     </div> 
-    <div class="total">
-        <p class="totalPrice">200</p> 
+    <div class="total-each">
+        <p>1</p> 
     </div>
     <div data-id={{productId._id}} class="delete-btn deleting">
         <button  class="btn-remove">Delete</button>
@@ -54,14 +53,14 @@
         <div class="summary">Order Summary</div>
         <div class="total">
         <p>Subtotal</p>
-        <p>402</p>
+        <p class="grant-total">100</p>
         </div>
         <div class="free">
             <p>Shopping</p>
             <p>Free</p>
         </div>
         <div class="bottom"></div>
-        <div class="checkout-btn">
+        <div data-cartId='{{Id}}' class="checkout-btn">
             <button class="bottom-btn">CHECKOUT</button>
         </div> 
     </div>

@@ -9,13 +9,23 @@ exports.home = catchAsync(async(req,res,next)=>{
   const products = await Product.find();
 const newProduct = products.filter(el=>el.bestseller === true)
 //  console.log(newProduct);
-  res.status(200).render('index',{admin:false,login:true,products:newProduct})
+if(req.user){
+  CanLogin=true;
+}else{
+  CanLogin=false;
+}
+  res.status(200).render('index',{admin:false,login:CanLogin,products:newProduct})
 });
 
 
 //LoginPage //////////////////////////////////
 exports.login = catchAsync(async(req, res, next) => {
-    res.status(200).render('users/login');
+  if(req.user){
+    CanLogin=true;
+  }else{
+    CanLogin=false;
+  }
+    res.status(200).render('users/login',{admin:false,login:CanLogin});
   });
 
 
@@ -25,14 +35,23 @@ exports.product = catchAsync(async(req, res, next) => {
     path:'reviews',
     fields:'review rating user'
 })
-console.log(product);
-    res.status(200).render('products/product',{admin:false,login:true,product});
+if(req.user){
+  CanLogin=true;
+}else{
+  CanLogin=false;
+}
+    res.status(200).render('products/product',{admin:false,login:CanLogin,product});
   });
 
   
 //Fruit Page ////////////////////////////////
 exports.myaccount = catchAsync(async(req, res, next) => {
-  res.status(200).render('users/account',{admin:false,login:true});
+  if(req.user){
+    CanLogin=true;
+  }else{
+    CanLogin=false;
+  }
+  res.status(200).render('users/account',{admin:false,login:CanLogin});
 });
 
   
@@ -44,7 +63,7 @@ exports.vegitablepage = catchAsync(async(req, res, next) => {
       $match:{ category:{ $eq:'vegetable'}}
     }
   ])
-  // console.log(products);
+  
     res.status(200).render('products/vegitables',{admin:false,login:true,products});
   });
   
@@ -93,7 +112,8 @@ exports.mycart = catchAsync(async(req, res, next) => {
   console.log(newCart);
   const totalPrice = newCart.map(each=>each.quantity*each.productId.price)
   // console.log(totalPrice);
-  res.status(200).render('users/mycart',{admin:false,login:true,newCart});
+  const Id =cartItems._id
+  res.status(200).render('users/mycart',{admin:false,login:true,newCart,Id});
 });
 
  
@@ -110,7 +130,6 @@ exports.addToCart = catchAsync(async (req, res, next) => {
     let cart = await Cart.findOne({ user });
 
     if (cart) {
-      console.log('cart is already here');
       let itemIndex = cart.products.find(p => p.productId._id.equals(productId));
       if (itemIndex) {
         itemIndex.quantity = itemIndex.quantity + +quantity;
