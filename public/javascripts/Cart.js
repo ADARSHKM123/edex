@@ -32,7 +32,7 @@ export const deleteCartItem = async (id) => {
             url: `http://localhost:3000/api/v1/mycart/deleteCartItem/${id}`,
 
         })
-        if (res.data.status == 'success')
+        if (res.data.status == 'success') 
         Showalert('success', 'Deleted Successfully');
         location.reload('http://localhost:3000/api/v1/user/mycart');
 
@@ -40,3 +40,4 @@ export const deleteCartItem = async (id) => {
         Showalert('error', 'Error Try again');
     } 
 } 
+

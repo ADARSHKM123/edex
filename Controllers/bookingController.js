@@ -13,9 +13,8 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
   
   const cart = await Cart.findById(req.params.cartId);
 // console.log(cart);
-console.log(typeof (process.env.STRIPE_SECRET_KEY));
-console.log(process.env.STRIPE_SECRET_KEY);
- console.log(cart.products);
+
+//  console.log(cart.products);
  let verity =cart.products;
 //  console.log(mass.productId._id);
  console.log(verity[0].productId.name)
@@ -24,11 +23,12 @@ console.log(process.env.STRIPE_SECRET_KEY);
  const images = verity[0].productId.image;
  const quantity = verity[0].quantity;
  const price = verity[0].productId.price;
+ console.log(images);
 
   //2)Create Checkout Session
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ['card'], 
-    success_url: `${req.protocol}://${req.get('host')}/`,
+    success_url: `http://localhost:3000/api/v1/user`,
     //   }&user=${req.user.id}&price=${tour.price}`,
     cancel_url: `${req.protocol}://${req.get('host')}/user/mycart`,
     customer_email: req.user.email, 
@@ -37,7 +37,7 @@ console.log(process.env.STRIPE_SECRET_KEY);
       {
         name: name,
         description: description,
-        images: [`http://localhost:3000/img/${images}.jpg`],
+        images: [`http://localhost:3000/img/${images}`],
         amount: price*100,
         currency: 'inr',
         quantity: quantity
@@ -49,8 +49,8 @@ console.log(process.env.STRIPE_SECRET_KEY);
   res.status(200).json({
     status: 'success',
     session
-  });
-
-})
+  });  
+  
+}) 
 
 

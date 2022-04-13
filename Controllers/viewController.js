@@ -110,7 +110,7 @@ exports.mycart = catchAsync(async(req, res, next) => {
     const newCart = cartItems.products;
   // console.log(cartItems.products);
   console.log(newCart);
-  const totalPrice = newCart.map(each=>each.quantity*each.productId.price)
+  // const totalPrice = newCart.map(each=>each.quantity*each.productId.price)
   // console.log(totalPrice);
   const Id =cartItems._id
   res.status(200).render('users/mycart',{admin:false,login:true,newCart,Id});

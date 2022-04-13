@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/cart.css">
+    <script src="https://js.stripe.com/v3/"></script>
     <title>Document</title>
 </head>
 <body>
@@ -60,10 +61,15 @@
             <p>Free</p>
         </div>
         <div class="bottom"></div>
-        <div data-cartId='{{Id}}' class="checkout-btn">
+        <div data-cart='{{Id}}' class="checkout-btn cart-checkout">
             <button class="bottom-btn">CHECKOUT</button>
         </div> 
     </div>
     </div>
 </body>
 </html>
+
+
+
+
+

@@ -1,7 +1,8 @@
-
 import '@babel/polyfill';
 import { login,logout } from './login';
-import {addtoCart,myCart,deleteCartItem} from './Cart';
+import {addtoCart,myCart,deleteCartItem} from './cart';
+import {checkout} from './stripe';
+
 
 
 const loginform = document.querySelector('.form');
@@ -10,10 +11,12 @@ let addToCart = document.querySelectorAll('.to-cart');
 const deleteItem = document.querySelectorAll('.deleting');
 
 //Cart
-const CartTotal = document.querySelectorAll('.total-each');
+const CartTotal = document.querySelectorAll('.total-each'); 
 const CartPrice = document.querySelectorAll('.price-each'); 
-const CartQuantity = document.querySelectorAll('.quantityEach');
+const CartQuantity = document.querySelectorAll('.quantityEach'); 
 const grantTotal = document.querySelector('.grant-total');
+const cartBtn = document.querySelector('.cart-checkout');                    
+
 
 // const MyCartHandler = document.querySelector('.to-mycart');
 
@@ -73,3 +76,13 @@ function getSum(total, num) {
   return total + Math.round(num);
 }
  
+
+if(cartBtn)
+    cartBtn.addEventListener('click',e=>{
+        console.log('clicked');
+        e.target.textContent = 'Processing....'
+        const cartId = cartBtn.dataset.cart;
+        console.log(cartId);
+        checkout(cartId); 
+    })
+  
