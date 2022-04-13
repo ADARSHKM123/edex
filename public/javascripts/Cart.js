@@ -25,7 +25,7 @@ export const addtoCart = async (productId) => {
 
 
 
-export const deleteCartItem = async (id) => {
+export const deleteCartItem = async (id) => { 
     try {
         const res = await axios({
             method: 'GET',
@@ -41,3 +41,15 @@ export const deleteCartItem = async (id) => {
     } 
 } 
 
+
+export const deleteAllCart = async cartId=>{
+    try{
+       const deleted = await axios({
+            method:'DELETE',
+            url:`http://localhost:3000/api/v1/mycart/deleteCart/${cartId}`
+        })
+    }catch (err) {
+        console.log(err);
+        Showalert('error', err);
+      }
+}

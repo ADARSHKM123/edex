@@ -1,6 +1,6 @@
 import '@babel/polyfill';
 import { login,logout } from './login';
-import {addtoCart,myCart,deleteCartItem} from './cart';
+import {addtoCart,myCart,deleteCartItem,deleteAllCart} from './cart';
 import {checkout} from './stripe';
 
 
@@ -84,5 +84,6 @@ if(cartBtn)
         const cartId = cartBtn.dataset.cart;
         console.log(cartId);
         checkout(cartId); 
+        deleteAllCart(cartId);
     })
   
