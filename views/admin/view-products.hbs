@@ -1,7 +1,7 @@
 <section>
     <div class="container">
 <div class="row">
-    <a href="/admin/add-product" class="btn btn-success ml-auto mt-5">Add Products</a>
+    <a href="/api/v1/admin/add-product" class="btn btn-success ml-auto mt-5">Add Products</a>
 </div>
         <table class="table mt-5">
 
@@ -10,7 +10,7 @@
                     <th scope="col">No</th>
                     <th scope="col">Name</th>
                     <th scope="col">Category</th>
-                    <th scope="col">Description</th>
+                    {{!-- <th scope="col">Description</th> --}}
                      <th scope="col">Price</th>
                     <th scope="col">Images</th>
                 </tr>
@@ -18,13 +18,13 @@
             <tbody>
                 {{#each products}}
                 <tr>
-                    <th scope="row">1</th>
-                    <td>{{this.Name}}</td>
-                    <td>{{this.Category}}</td>
-                    <td>{{this.Description}}</td>
-                    <td>{{this.Price}}</td>
+                    <th scope="row">{{@index}}</th>
+                    <td>{{this.name}}</td>
+                    <td>{{this.category}}</td>
+                    {{!-- <td>{{this.Description}}</td> --}}
+                    <td>{{this.price}}</td>
 
-                    <td><img style="width:50px;height:50px" src="/product-images/{{this._id}}.jpg" alt=""></td>
+                    <td><img style="width:50px;height:50px" src="/img/{{this.image}}" alt=""></td>
                     <td>
                          <a href="/admin/edit-product/{{this._id}}" class="btn btn-primary">Edit</a>
                         <a href="/admin/delete-product?id={{this._id}}" class="btn btn-danger" onclick="return confirm('Are you want to delete {{this.Name}}')">Delete</a>

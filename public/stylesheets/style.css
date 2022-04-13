@@ -940,3 +940,32 @@ body {
 /* User Account */
 
 
+/* Admin ///////////////*/
+.admin-add-productPage{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  align-content: center;
+  overflow-x: hidden;
+  width: 2000px;
+  padding: 20px;
+  margin-top: 32px;
+}
+.add-product-admin{
+  /* margin-top: 5px; */
+}
+.add-product-label{
+  font-size: 18px;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding-top: 10px;
+  color: #181818;
+}
+.admin-addProduct-headline{
+  font-size: 32px;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: uppercase;
+  color: #a30466;
+}

@@ -12,5 +12,7 @@ exports.deleteProduct = handle.deleteOne(Product);
 
 
 exports.productlist = catchAsync(async (req, res, next) => {
-   res.status(200).render('admin/view-products',{admin:true});
+   const products = await Product.find();
+   res.status(200).render('admin/view-products',{admin:true,products});
 }); 
+

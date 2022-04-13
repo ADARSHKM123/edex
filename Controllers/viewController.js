@@ -90,6 +90,7 @@ exports.saucepage = catchAsync(async(req, res, next) => {
 });
  
 
+
 //Fruit Page ////////////////////////////////
 exports.housepage = catchAsync(async(req, res, next) => {
   const products = await Product.aggregate([
@@ -101,6 +102,9 @@ exports.housepage = catchAsync(async(req, res, next) => {
 });
  
 
+
+//Get My Cart /////////////////////////////////////
+
 exports.mycart = catchAsync(async(req, res, next) => {
   const user = req.user._id;
     const cartItems = await Cart.findOne({ user: user })
@@ -108,16 +112,14 @@ exports.mycart = catchAsync(async(req, res, next) => {
       return next(createError("No items in the cart", 400))
     }
     const newCart = cartItems.products;
-  // console.log(cartItems.products);
   console.log(newCart);
-  // const totalPrice = newCart.map(each=>each.quantity*each.productId.price)
-  // console.log(totalPrice);
   const Id =cartItems._id
   res.status(200).render('users/mycart',{admin:false,login:true,newCart,Id});
 });
 
  
 
+//AddTo Cart////////////////////////////////////////
 
 exports.addToCart = catchAsync(async (req, res, next) => {
   const user = req.user._id;
@@ -158,3 +160,10 @@ exports.addToCart = catchAsync(async (req, res, next) => {
     res.status(500).json("Something went wrong", err);
   }
 });
+
+
+
+//////For Admin
+exports.addProduct = catchAsync(async (req, res, next) => {
+  res.status(200).render('admin/admin-addProduct',{admin:true});
+});   
