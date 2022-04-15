@@ -11,15 +11,13 @@ export const addtoCart = async (productId) => {
 
         })
         if (res.data.status == 'success')
-        console.log(productId);
         setTimeout(() => {                 
         Showalert('success', 'Added Sucessfully!'); 
         }, 1000);
         location.reload('http://localhost:3000/api/v1/user/');
 
     } catch (err) {
-        console.log(productId);
-        Showalert('error', 'Error Try again');
+        Showalert('error', 'Error Try again',err);
     }
 } 
 

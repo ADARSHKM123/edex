@@ -4,6 +4,8 @@ const handle = require('../Controllers/handlefactory');
 
 
 
+
+
 exports.getProduct = handle.getOne(Product,{ path:'reviews' });
 exports.addProduct = handle.createOne(Product);
 exports.getAllProduct = handle.getAll(Product);

@@ -26,5 +26,5 @@ const sendEmail =async options=>{
     //3)Actually send the email   
    await transporter.sendMail(mailOptoins)  
 }; 
-
-module.exports = sendEmail;    
+ 
+module.exports = sendEmail;     

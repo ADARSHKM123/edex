@@ -8,7 +8,6 @@ const Cart = require('../Models/cartItemsModel');
 exports.home = catchAsync(async(req,res,next)=>{
   const products = await Product.find();
 const newProduct = products.filter(el=>el.bestseller === true)
-//  console.log(newProduct);
 if(req.user){
   CanLogin=true;
 }else{
@@ -112,7 +111,6 @@ exports.mycart = catchAsync(async(req, res, next) => {
       return next(createError("No items in the cart", 400))
     }
     const newCart = cartItems.products;
-  console.log(newCart);
   const Id =cartItems._id
   res.status(200).render('users/mycart',{admin:false,login:true,newCart,Id});
 });
@@ -141,7 +139,6 @@ exports.addToCart = catchAsync(async (req, res, next) => {
       cart = await cart.save();
       return res.status(200).json({ cart });
     } else {
-      console.log('new Cart');
       const newCart = await Cart.create({
         user: user,
         products: { productId, quantity, price }

@@ -1,6 +1,39 @@
 const catchAsync = require('../Util/catchAsync');
 const createError = require('http-errors');
 const APIFeatures = require('../Util/apiFeatures');
+const multer = require('multer');
+const AppError = require('../Util/appError');
+
+
+//Multer //////////////////////////////////////////
+const multerStrorage = multer.diskStorage({
+  destination:(req, file, cb)=>{
+     cb(null, 'public/img');
+  },
+  filename:(req,file,cb)=>{
+    const ext= file.mimetype.split('/')[1];
+     cb(null,`product-${Date.now()}.${ext}`)
+  }
+})
+
+const multerFilter = (req,file,cb)=>{
+  if(file.mimetype.startsWith('image')){
+    cb(null,true)
+  }else{
+    cb(new createError('Not an Image! Please upload only images',404),false)
+  }
+}
+
+const upload = multer({
+  storage:multerStrorage,
+  fileFilter:multerFilter 
+});
+
+
+
+exports.ProductImage = upload.single('image');
+
+
 
 exports.deleteOne = Model =>
   catchAsync(async (req, res, next) => {
@@ -37,7 +70,17 @@ exports.updateOne = Model =>
 
 exports.createOne = Model =>
   catchAsync(async (req, res, next) => {
-    const doc = await Model.create(req.body);
+ 
+    // let doc;
+    if(req.file){
+      console.log('hooooooooooooooooooooo');
+      // const filteredBody = filterObj(req.body,'name','category','description','price','rating');
+      req.body.image = req.file.filename;
+     
+    }
+      const doc = await Model.create(req.body);
+    console.log(req.file);
+    console.log(req.body);
 
     res.status(201).json({
       status: 'success',

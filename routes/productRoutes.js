@@ -4,15 +4,19 @@ const productController = require('../Controllers/productController.js');
 const authController = require('../Controllers/authController');
 const reviewController = require('../Controllers/reviewController')
 const addToCartController = require('../Controllers/addToCartController');
+const ProductImageUpload = require('../Controllers/handlefactory');
+
+
+
 
 /* GET home page. */
 router
     .route('/')
     .get(productController.getAllProduct)
-    .post(authController.protect, authController.restrictTo('admin'), productController.addProduct)
+    .post(authController.protect, authController.restrictTo('admin'),ProductImageUpload.ProductImage,productController.addProduct)
 
 router
-    .route('/:id')
+    .route('/:id') 
     .get(productController.getProduct)
     .patch(productController.updateProduct)
     .delete(authController.protect, authController.restrictTo('admin'), productController.deleteProduct)

@@ -18,7 +18,6 @@ exports.addToCart = catchAsync(async (req, res, next) => {
     let cart = await Cart.findOne({ user });
 
     if (cart) {
-      console.log('cart is already here');
       let itemIndex = cart.products.find(p => p.productId._id.equals(productId));
       if (itemIndex) {
         itemIndex.quantity = itemIndex.quantity + +quantity;
@@ -28,7 +27,6 @@ exports.addToCart = catchAsync(async (req, res, next) => {
       cart = await cart.save();
       return res.status(200).json({ cart });
     } else {
-      console.log('new Cart');
       const newCart = await Cart.create({
         user: user,
         products: { productId, quantity, price }
@@ -116,7 +114,6 @@ exports.deleteMycart = catchAsync(async (req, res, next) => {
 
 exports.getMyCart = catchAsync(async (req, res, next) => {
   const user = req.user._id;
-  console.log(user);
   const cartItems = await Cart.findOne({ user: user })
   if (cartItems === null) {
     return next(createError("No items in the cart", 400))

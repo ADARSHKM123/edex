@@ -35,10 +35,10 @@ const productDetails = verity.map((el,i)=>{
     line_items: productDetails
   });
 
-  res.status(200).json({
+  res.status(200).json({ 
     status: 'success',
     session
-  });  
+  });   
   
 }) 
 

@@ -9,7 +9,6 @@ export const checkout = async cartId=>{
        const session = await axios(
            `http://localhost:3000/api/v1/booking/checkout-session/${cartId}`
        );
-       console.log(session);
        await stripe.redirectToCheckout({
         sessionId: session.data.session.id
       });

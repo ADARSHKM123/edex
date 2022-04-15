@@ -63,7 +63,6 @@ productSchema.pre('save',function(next){
 
 //Document Middleware
 productSchema.pre('save',function(next){
-    console.log('will save...')
     next();
 });
 
