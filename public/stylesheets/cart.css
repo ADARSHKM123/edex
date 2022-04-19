@@ -9,28 +9,25 @@ body,html{
     font-family: 'Quicksand', sans-serif;
     font-family: 'Roboto', sans-serif;
     overflow-x: hidden;
-    /* width: 1600px; */
-    /* height: auto; */
 }
 
 
 .header h1{
     font-family: 'Open Sans';
-    text-align: left;
+    display: flex;
+    justify-content: center;
     color: #000000;
     font-style: normal;
     font-weight: 400;
     font-size: 50px;
     line-height: 87px; 
-    margin-left: 100px;
     letter-spacing: 0.05em;
 }
 .under-line{
-    width: 220px;
-    margin-left: 100px;
-    border: solid 1px #000;
+    display: flex;
+    justify-content: center;
     height: 0;
-    background-color: #000;
+    background-color: rgba(63, 63, 63, 0.171);
 }
 .cart-body{
     padding-top: 100px;
@@ -49,7 +46,6 @@ body,html{
     grid-template-rows: 1fr 1fr 1fr 1fr 2fr;
 }
 .all-cart{
-    /* padding-top: 50px; */
     height: 300px;
     width: 890px;
     overflow-y: scroll;
@@ -90,9 +86,7 @@ body,html{
     font-style: normal;
     font-weight: 700;
 }
-.cart-items-body{
-    /* background-color: #ff1e00; */
-}
+
 .row{
     display: grid;
     grid-template-columns: 350px 150px 200px 100px 100px;
@@ -115,7 +109,6 @@ grid-template-columns: 350px 150px 200px 100px;
 }
 .delete-btn{
     width: 100px;
-    /* padding-right: 20px; */
 }
 .btn-remove{
     padding: 5px 10px 5px 10px;

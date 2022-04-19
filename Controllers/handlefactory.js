@@ -2,7 +2,7 @@ const catchAsync = require('../Util/catchAsync');
 const createError = require('http-errors');
 const APIFeatures = require('../Util/apiFeatures');
 const multer = require('multer');
-const AppError = require('../Util/appError');
+
 
 
 //Multer //////////////////////////////////////////
@@ -73,10 +73,7 @@ exports.createOne = Model =>
  
     // let doc;
     if(req.file){
-      console.log('hooooooooooooooooooooo');
-      // const filteredBody = filterObj(req.body,'name','category','description','price','rating');
       req.body.image = req.file.filename;
-     
     }
       const doc = await Model.create(req.body);
     console.log(req.file);
@@ -119,8 +116,6 @@ exports.getAll = Model =>
       .sort()
       .limitFields()
       .paginate();
-    // const doc = await features.query.explain();
-    // const doc = await features.query.explain();
     const doc = await features.query;
 
     // SEND RESPONSE
@@ -131,6 +126,4 @@ exports.getAll = Model =>
         data: doc
       } 
     });
-    // res.status(200).render('index',{admin:false,login:true})
-    // res.status(200).render('product',{admin:false,login:true})
   });

@@ -5,7 +5,6 @@ const createError = require('http-errors');
 const AppError = require('../Util/appError');
 const async = require('hbs/lib/async');
 const {promisify} = require('util');
-// const async = require('hbs/lib/async');
 const sendEmail =require('../Util/email');
 const crypto= require('crypto');
 
@@ -134,7 +133,9 @@ exports.protect=catchAsync(async(req,res,next)=>{
    }
    console.log(`token:${token}`);
    if(!token){
-       return next(createError('You are not logged in! please login to get access',401))
+      //  return next(createError('You are not logged in! please login to get access',401))
+       const message = 'You are not logged in! please login to get access'
+       res.status(401).render('error',{message})
    }
  
    //Verification Token
@@ -170,9 +171,11 @@ req.user = currentUser;
 exports.restrictTo = (...roles) => {
   return (req, res, next) => {
     if (!roles.includes(req.user.role)) {
-      return next(
-        createError('You do not have permission to perform this action', 403)
-      );
+      // return next(
+      //   createError('You do not have permission to perform this action', 403)
+      // );
+      const message = 'You do not have permission to perform this action!';
+      res.status(500).render('error',{message})
     }
     next();
   };

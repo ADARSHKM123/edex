@@ -1,7 +1,6 @@
 const createError = require('http-errors');
 const catchAsync = require('../Util/catchAsync');
 const Cart = require('../Models/cartItemsModel');
-const User = require('../Models/userModel');
 const async = require('hbs/lib/async');
 
 

@@ -16,12 +16,12 @@ const CartPrice = document.querySelectorAll('.price-each');
 const CartQuantity = document.querySelectorAll('.quantityEach'); 
 const grantTotal = document.querySelector('.grant-total');
 const cartBtn = document.querySelector('.cart-checkout');      
-const adminForm = document.getElementById('admin-form');             
-const adminName = document.getElementById('admin-name');             
-const adminCategory = document.getElementById('admin-category');             
-const adminDescription = document.getElementById('admin-description');             
-const adminImage = document.getElementById('admin-image');             
-const adminPrice = document.getElementById('admin-price');             
+// const adminForm = document.getElementById('admin-form');             
+// const adminName = document.getElementById('admin-name');             
+// const adminCategory = document.getElementById('admin-category');             
+// const adminDescription = document.getElementById('admin-description');             
+// const adminImage = document.getElementById('admin-image');             
+// const adminPrice = document.getElementById('admin-price');             
 const productDelete = document.querySelectorAll('.delete-btn');  
 
 
@@ -84,6 +84,7 @@ if(productDelete){
             e.preventDefault();
             const productId =el.dataset.productid
             deleteProduct(productId);
+            console.log(productId);
         })
     })
 }

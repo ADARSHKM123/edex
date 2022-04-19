@@ -969,3 +969,11 @@ body {
   text-transform: uppercase;
   color: #FA0180;
 }
+
+/* //Error Message */
+.err-msg{
+  color: rgb(224, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

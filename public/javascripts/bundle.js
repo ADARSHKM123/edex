@@ -9498,13 +9498,13 @@ var CartTotal = document.querySelectorAll('.total-each');
 var CartPrice = document.querySelectorAll('.price-each');
 var CartQuantity = document.querySelectorAll('.quantityEach');
 var grantTotal = document.querySelector('.grant-total');
-var cartBtn = document.querySelector('.cart-checkout');
-var adminForm = document.getElementById('admin-form');
-var adminName = document.getElementById('admin-name');
-var adminCategory = document.getElementById('admin-category');
-var adminDescription = document.getElementById('admin-description');
-var adminImage = document.getElementById('admin-image');
-var adminPrice = document.getElementById('admin-price');
+var cartBtn = document.querySelector('.cart-checkout'); // const adminForm = document.getElementById('admin-form');             
+// const adminName = document.getElementById('admin-name');             
+// const adminCategory = document.getElementById('admin-category');             
+// const adminDescription = document.getElementById('admin-description');             
+// const adminImage = document.getElementById('admin-image');             
+// const adminPrice = document.getElementById('admin-price');             
+
 var productDelete = document.querySelectorAll('.delete-btn'); // const MyCartHandler = document.querySelector('.to-mycart');
 // const header = document.querySelector('.header');
 
@@ -9563,6 +9563,7 @@ if (productDelete) {
       e.preventDefault();
       var productId = el.dataset.productid;
       (0, _adminAddproduct.deleteProduct)(productId);
+      console.log(productId);
     });
   });
 } //Cart Garnt Total///////////////
@@ -9641,7 +9642,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "10962" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "6521" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
