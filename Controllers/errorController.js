@@ -6,6 +6,10 @@ exports.errorCreate = function(req, res, next) {
   
 
 exports.errormsg = function(err, req, res, next) {
+  if(err.message === 'createError is not defined'){
+    const message = 'Page not found!'
+    res.status(500).render('error',{message})
+  }
     if(err.message === 'invalid signature') 
     res.json({
       status:'fail',
@@ -29,7 +33,7 @@ exports.errormsg = function(err, req, res, next) {
     res.json({
       status:'fail',
       message:err.message
-    })
+    }) 
   };
 
   

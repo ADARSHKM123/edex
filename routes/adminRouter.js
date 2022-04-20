@@ -11,7 +11,7 @@ router
 .get(productController.productlist)
 
 router.route('/add-product')
-.get(viewController.addProduct)
+.get(authController.protect,authController.restrictTo('admin'),viewController.addProduct)
 
 
 

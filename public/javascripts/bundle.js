@@ -8876,8 +8876,9 @@ var logout = /*#__PURE__*/function () {
 
           case 3:
             res = _context2.sent;
-            if (res.data.status == 'success') (0, _alert.Showalert)('success', 'Logged out successfully!');
-            location.reload('http://localhost:3000/api/v1/user/');
+            if (res.data.status == 'success') (0, _alert.Showalert)('success', 'Logged out successfully!'); // location.reload('http://localhost:3000/api/v1/user');
+
+            location.reload();
             _context2.next = 11;
             break;
 
@@ -9642,7 +9643,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "6521" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "1337" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

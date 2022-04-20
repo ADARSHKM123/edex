@@ -42,7 +42,36 @@ if(req.user){
     res.status(200).render('products/product',{admin:false,login:CanLogin,product});
   });
 
-  
+
+  //household Page ////////////////////////////////
+exports.householdpage = catchAsync(async(req, res, next) => {
+  const products = await Product.aggregate([
+    {
+      $match:{ category:{ $eq:'Household'}}
+    }
+  ])
+  res.status(200).render('products/houseappliences',{admin:false,login:true,products});
+});
+
+exports.personalcarepage = catchAsync(async(req, res, next) => {
+  const products = await Product.aggregate([
+    {
+      $match:{ category:{ $eq:'Personal Care'}}
+    }
+  ])
+  res.status(200).render('products/personalcare',{admin:false,login:true,products});
+});
+
+exports.kitchenpage = catchAsync(async(req, res, next) => {
+  const products = await Product.aggregate([
+    {
+      $match:{ category:{ $eq:'kitchen'}}
+    }
+  ])
+  res.status(200).render('products/kitchen',{admin:false,login:true,products});
+});
+
+   
 //Fruit Page ////////////////////////////////
 exports.myaccount = catchAsync(async(req, res, next) => {
   if(req.user){

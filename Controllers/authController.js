@@ -139,7 +139,7 @@ exports.protect=catchAsync(async(req,res,next)=>{
    }
  
    //Verification Token
-  const decoded = await promisify(jwt.verify)(token,process.env.JWT_SECRET);
+  const decoded = await promisify(jwt.verify)(token,process.env.JWT_SECRET); 
    
   //Check if user still exist
    const currentUser =await User.findById(decoded.id);

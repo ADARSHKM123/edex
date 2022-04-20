@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://kit.fontawesome.com/ccdb6a7bcb.js" crossorigin="anonymous"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow:wght@800&family=Open+Sans:wght@300;400;500;600&family=Quicksand:wght@300;500;700&family=Roboto:wght@100;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/personalcare.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="header-top">
+            <div class="tagie">
+            {{!-- <p class="purity">100%</p>
+            <h1 class="purity-tag">Organic and Fresh Fruit<br> for you</h1> --}}
+            </div>
+        </div>
+        <div class="product-main container-main">
+            <div class="filter-page">
+                <div class="filter">
+                    <p>Filter by Price</p>
+                    <div class="filter-bar">Filter Bar</div>
+                    <button class="filter-btn">FILTER</button>
+                </div>
+                <div class="category-part">
+                    <p>category</p>
+                    <hr class="category-line">
+                    <div class="each-category">
+                        <div class="checkbox-eachone">
+                            <input type="checkbox">
+                            <label for="" class="eachone-field">vegitables</label>
+                        </div>
+                        <div class="checkbox-eachone">
+                            <input type="checkbox">
+                            <label for="" class="eachone-field">Fruits</label>
+                        </div>
+                        <div class="checkbox-eachone">
+                            <input type="checkbox">
+                            <label for="" class="eachone-field">Dairy</label>
+                        </div>
+                        <div class="checkbox-eachone">
+                            <input type="checkbox">
+                            <label for="" class="eachone-field">Health Care</label>
+                        </div>
+                        <div class="checkbox-eachone">
+                            <input type="checkbox">
+                            <label for="" class="eachone-field">Baby Items</label>
+                        </div>
+                        <div class="checkbox-eachone">
+                            <input type="checkbox">
+                            <label for="" class="eachone-field">Baking</label>
+                        </div>
+                        <div class="checkbox-eachone">
+                            <input type="checkbox">
+                            <label for="" class="eachone-field">Personal Care</label>
+                        </div>
+                        <div class="checkbox-eachone">
+                            <input type="checkbox">
+                            <label for="" class="eachone-field">Dish soap</label>
+                        </div>
+                        <div class="checkbox-eachone">
+                            <input type="checkbox">
+                            <label for="" class="eachone-field">Frozen Foods</label>
+                        </div>
+                        <div class="checkbox-eachone">
+                            <input type="checkbox">
+                            <label for="" class="eachone-field">Snacks</label>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="main-page">
+               
+               {{#each products}}
+                <div class="card-product">
+                    <a href="/api/v1/user/productpage/{{this.slug}}">
+                        <div class="img-box-inner">
+                            <div class="card-img-inner">
+                                <img src="/img/{{this.image}}" class="img-card-inner" alt="">
+                            </div>
+                        </div>
+                    </a>
+                    <div class="review-star">
+                        <div class="icons-star">
+                            <span class="fa fa-star checked-star"></span>
+                            <span class="fa fa-star checked-star"></span>
+                            <span class="fa fa-star checked-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <div class="desc-data">
+                            <p>{{this.name}}</p>
+                            <p><span>&#8377;</span>{{this.price}}</p>
+                        </div>
+                        <a href="" class="addToCart-link-tag">
+                            <div data-id="{{this._id}}"  class="addto-cart-bttn to-cart">
+                                <p>Add To Cart</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                {{/each}}
+
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
