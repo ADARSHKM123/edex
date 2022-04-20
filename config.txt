@@ -1,0 +1,15 @@
+NODE_ENV="development"
+PORT= "3000"
+DATABASE= "mongodb+srv://Adarsh:<PASSWORD>@cluster0.ipxe3.mongodb.net/edex?retryWrites=true&w=majority"
+DATABASE_PASSWORD="test"
+JWT_SECRET= "edex_grocery_onlineshop_is_going_to_be_the_change_inthe_ecomerce_space"
+JWT_EXPIRES_IN="90d"
+
+
+EMAIL_USERNAME ="82482940ff7031"
+EMAIL_PASSWORD = "0085f0764371f1"
+EMAIL_HOST = "smtp.mailtrap.io"
+EMAIL_PORT = "25"   
+JWT_COOKIE_EXPIRES_IN="90" 
+
+STRIPE_SECRET_KEY="sk_test_51Ki0l3SAJq8NpmmnpxmANEjsEG0ep1sm7fsdpmISOIeOnA2LRkpSqh1aCAt99njikdBXzTDirM0LEE5kAhkMqXr8000QRw38Ny"
