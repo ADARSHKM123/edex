@@ -85,15 +85,23 @@ app.use('/api/v1/reviews', reviewRouter);
 app.use('/api/v1/booking', bookingRouter);  
   
 
+app.use((req,res,next)=>{
+  const error= new Error('Not Found')
+  error.status= 404;
+  next(error);
+})
 
-// app.all('*',(req,res,next)=>{
+app.use((error,req,res,next)=>{
+res.status(error.status || 500);
+const err = error.message
+let msg;
+if(err === 'jwt must be provided')
+  msg = `You are not loggedIn`
+res.status(500).render('error',{msg})
+})
 
-//   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
-// });
-
-// error handler
 app.use(globalErrorHandler.errorCreate); 
 app.use(globalErrorHandler.errormsg);
 
-
+ 
 module.exports = app;
