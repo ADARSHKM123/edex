@@ -13,10 +13,10 @@ const ProductImageUpload = require('../Controllers/handlefactory');
 router
     .route('/')
     .get(productController.getAllProduct)
-    .post(authController.protect, authController.restrictTo('admin'),ProductImageUpload.ProductImage,productController.addProduct)
+    .post(authController.protect, authController.restrictTo('admin'), ProductImageUpload.ProductImage, productController.addProduct)
 
 router
-    .route('/:id') 
+    .route('/:id')
     .get(productController.getProduct)
     .patch(productController.updateProduct)
     .delete(authController.protect, authController.restrictTo('admin'), productController.deleteProduct)
@@ -32,6 +32,6 @@ router.route('/:productId/cart')
     .post(
         authController.protect,
         addToCartController.addToCart
-    ) 
+    )
 
 module.exports = router;

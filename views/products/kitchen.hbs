@@ -18,8 +18,6 @@
     <section>
         <div class="header-top">
             <div class="tagie">
-            {{!-- <p class="purity">100%</p>
-            <h1 class="purity-tag">Organic and Fresh Fruit<br> for you</h1> --}}
             </div>
         </div>
         <div class="product-main container-main">
@@ -78,8 +76,8 @@
                 </div>
             </div>
             <div class="main-page">
-               
-               {{#each products}}
+
+                {{#each products}}
                 <div class="card-product">
                     <a href="/api/v1/user/productpage/{{this.slug}}">
                         <div class="img-box-inner">
@@ -101,7 +99,7 @@
                             <p><span>&#8377;</span>{{this.price}}</p>
                         </div>
                         <a href="" class="addToCart-link-tag">
-                            <div data-id="{{this._id}}"  class="addto-cart-bttn to-cart">
+                            <div data-id="{{this._id}}" class="addto-cart-bttn to-cart">
                                 <p>Add To Cart</p>
                             </div>
                         </a>

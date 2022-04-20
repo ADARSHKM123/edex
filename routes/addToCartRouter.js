@@ -16,10 +16,4 @@ router
 .route('/:id')
 .get(addToCartController.getCart)
 
-
-
-
-// router.route('/mycart')
-// .get(addToCartController.getMyCart)
-
 module.exports = router

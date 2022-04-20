@@ -7,26 +7,26 @@ const multer = require('multer');
 
 //Multer //////////////////////////////////////////
 const multerStrorage = multer.diskStorage({
-  destination:(req, file, cb)=>{
-     cb(null, 'public/img');
+  destination: (req, file, cb) => {
+    cb(null, 'public/img');
   },
-  filename:(req,file,cb)=>{
-    const ext= file.mimetype.split('/')[1];
-     cb(null,`product-${Date.now()}.${ext}`)
+  filename: (req, file, cb) => {
+    const ext = file.mimetype.split('/')[1];
+    cb(null, `product-${Date.now()}.${ext}`)
   }
 })
 
-const multerFilter = (req,file,cb)=>{
-  if(file.mimetype.startsWith('image')){
-    cb(null,true)
-  }else{
-    cb(new createError('Not an Image! Please upload only images',404),false)
+const multerFilter = (req, file, cb) => {
+  if (file.mimetype.startsWith('image')) {
+    cb(null, true)
+  } else {
+    cb(new createError('Not an Image! Please upload only images', 404), false)
   }
 }
 
 const upload = multer({
-  storage:multerStrorage,
-  fileFilter:multerFilter 
+  storage: multerStrorage,
+  fileFilter: multerFilter
 });
 
 
@@ -70,14 +70,14 @@ exports.updateOne = Model =>
 
 exports.createOne = Model =>
   catchAsync(async (req, res, next) => {
- 
+
     // let doc;
-    if(req.file){
+    if (req.file) {
       req.body.image = req.file.filename;
     }
-      const doc = await Model.create(req.body);
-    console.log(req.file);
-    console.log(req.body);
+    const doc = await Model.create(req.body);
+    // console.log(req.file);
+    // console.log(req.body);
 
     res.status(201).json({
       status: 'success',
@@ -124,6 +124,6 @@ exports.getAll = Model =>
       results: doc.length,
       data: {
         data: doc
-      } 
+      }
     });
   });

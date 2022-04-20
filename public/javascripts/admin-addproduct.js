@@ -1,46 +1,40 @@
 import axios from 'axios';
-import {Showalert} from './alert';
+import { Showalert } from './alert';
 
 
-export const addProduct = async (productData)=>{
+export const addProduct = async (productData) => {
 
     console.log(productData);
 
-    try{
+    try {
         const successData = await axios({
-            method:'POST',
-            url:`http://localhost:3000/api/v1/products`,
-            data:productData
+            method: 'POST',
+            url: `/api/v1/products`,
+            data: productData
         })
-        if(successData.data.status === 'success'){
-            Showalert('success','Added successfully!');
-            //   window.setTimeout(()=>{
-            //       location.assign('/');
-            //   },1500);
-          }
+        if (successData.data.status === 'success') {
+            Showalert('success', 'Added successfully!');
+        }
 
-    }catch (err) {
+    } catch (err) {
         Showalert('error', 'Error Try again');
     }
 
 }
 
 
-export const deleteProduct = async(productid)=>{
-    try{
+export const deleteProduct = async (productid) => {
+    try {
         const successData = await axios({
-            method:'DELETE',
-            url:`http://localhost:3000/api/v1/products/${productid}`
+            method: 'DELETE',
+            url: `/api/v1/products/${productid}`
         })
-        if(successData === 'null'){
-            Showalert('success','Deleted successfully!');
-            //   window.setTimeout(()=>{
-            //       location.assign('/');
-            //   },1500);
-          }
+        if (successData === 'null') {
+            Showalert('success', 'Deleted successfully!');
+        }
 
-    }catch (err) {
+    } catch (err) {
         Showalert('error', 'Error Try again');
     }
 
-}
+}  

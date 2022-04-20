@@ -14,7 +14,7 @@ const reviewSchema = new mongoose.Schema(
     },
     createdAt: {
       type: Date,
-      default: Date.now 
+      default: Date.now
     },
     product: {
       type: mongoose.Schema.ObjectId,
@@ -31,20 +31,20 @@ const reviewSchema = new mongoose.Schema(
     toJSON: { virtuals: true },
     toObject: { virtuals: true }
   }
-);    
+);
 
-reviewSchema.pre(/^find/,function(next){
-    this.populate({
-        path:'product',
-        select:'name'
-    }).populate({
-        path:'user',
-        select:'name photo'
-    })
-    next();
+reviewSchema.pre(/^find/, function (next) {
+  this.populate({
+    path: 'product',
+    select: 'name'
+  }).populate({
+    path: 'user',
+    select: 'name photo'
+  })
+  next();
 })
 
-const Review = mongoose.model('Review',reviewSchema);
+const Review = mongoose.model('Review', reviewSchema);
 
 
 

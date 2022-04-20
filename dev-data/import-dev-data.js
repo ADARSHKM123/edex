@@ -32,7 +32,7 @@ const importData = async () => {
     try {
       // await Review.deleteMany();
       await Product.deleteMany();
-      console.log('Data successfully deleted!');
+      // console.log('Data successfully deleted!');
     } catch (err) {
       console.log(err);
     }
@@ -41,7 +41,7 @@ const importData = async () => {
   
 
 
-  console.log(process.argv);
+  // console.log(process.argv);
 
   if (process.argv[2] === '--import') {
     importData();

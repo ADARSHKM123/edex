@@ -20,7 +20,7 @@
             <div class="tagie">
             </div>
         </div>
-         <div class="product-main container-main">
+        <div class="product-main container-main">
             <div class="filter-page">
                 <div class="filter">
                     <p>Filter by Price</p>
@@ -75,9 +75,9 @@
                     </div>
                 </div>
             </div>
-           <div class="main-page">
-               
-               {{#each products}}
+            <div class="main-page">
+
+                {{#each products}}
                 <div class="card-product">
                     <a href="/api/v1/user/productpage/{{this.slug}}">
                         <div class="img-box-inner">
@@ -99,7 +99,7 @@
                             <p><span>&#8377;</span>{{this.price}}</p>
                         </div>
                         <a href="" class="addToCart-link-tag">
-                            <div data-id="{{this._id}}"  class="addto-cart-bttn to-cart">
+                            <div data-id="{{this._id}}" class="addto-cart-bttn to-cart">
                                 <p>Add To Cart</p>
                             </div>
                         </a>
@@ -109,8 +109,7 @@
 
             </div>
         </div>
-        {{!-- jkjnf --}}
-        
+
     </section>
 </body>
 

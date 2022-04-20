@@ -131,14 +131,14 @@ exports.protect=catchAsync(async(req,res,next)=>{
    }else if(req.cookies.jwt){
      token = req.cookies.jwt;
    }
-   console.log(`token:${token}`);
+  //  console.log(`token:${token}`);
    if(!token){
       //  return next(createError('You are not logged in! please login to get access',401))
        const message = 'You are not logged in! please login to get access'
        res.status(401).render('error',{message})
    }
  
-   //Verification Token
+   //Verification Token 
   const decoded = await promisify(jwt.verify)(token,process.env.JWT_SECRET); 
    
   //Check if user still exist

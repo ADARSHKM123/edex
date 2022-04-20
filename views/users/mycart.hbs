@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,68 +9,64 @@
     <script src="https://js.stripe.com/v3/"></script>
     <title>Document</title>
 </head>
+
 <body>
     <div class="header">
-     <h1 class="mycart">Your Bag</h1>
-     <hr class="under-line">
+        <h1 class="mycart">Your Bag</h1>
+        <hr class="under-line">
     </div>
     <div class="cart-body">
-    <div class="cart-items-body">
-    <nav class="haeading">
-        <p>PRODUCTS</p>
-        <p>PRICE</p>
-        <p>QUANTITY</p>
-        <p>TOTAL</p>
-    </nav>
-<div class="all-cart">
-    <!-- //row -->
- 
+        <div class="cart-items-body">
+            <nav class="haeading">
+                <p>PRODUCTS</p>
+                <p>PRICE</p>
+                <p>QUANTITY</p>
+                <p>TOTAL</p>
+            </nav>
+            <div class="all-cart">
 
-    {{#each newCart}}
-    <hr>
-    <div class="row">
-    <div class="product-img">
-        <img class="cart-image" src="/img/{{productId.image}}" alt="cart-product-image">
-        <p>{{productId.name}}</p>
-    </div>
-    <div class="price-each">
-        <p>{{productId.price}}</p>
-    </div>
-    <div class="quantityEach">
-        <p>{{this.quantity}}</p>
-    </div> 
-    <div class="total-each">
-        <p>1</p> 
-    </div>
-    <div data-id={{productId._id}} class="delete-btn deleting">
-        <button  class="btn-remove">Delete</button>
-    </div> 
-    </div>
-    {{/each}}
-    
-</div>
 
-    </div>
-    <div class="checkout-body">
-        <div class="summary">Order Summary</div>
-        <div class="total">
-        <p>Subtotal</p>
-        <p class="grant-total">100</p>
+                {{#each newCart}}
+                <hr>
+                <div class="row">
+                    <div class="product-img">
+                        <img class="cart-image" src="/img/{{productId.image}}" alt="cart-product-image">
+                        <p>{{productId.name}}</p>
+                    </div>
+                    <div class="price-each">
+                        <p>{{productId.price}}</p>
+                    </div>
+                    <div class="quantityEach">
+                        <p>{{this.quantity}}</p>
+                    </div>
+                    <div class="total-each">
+                        <p>1</p>
+                    </div>
+                    <div data-id={{productId._id}} class="delete-btn deleting">
+                        <button class="btn-remove">Delete</button>
+                    </div>
+                </div>
+                {{/each}}
+
+            </div>
+
         </div>
-        <div class="free">
-            <p>Shopping</p>
-            <p>Free</p>
+        <div class="checkout-body">
+            <div class="summary">Order Summary</div>
+            <div class="total">
+                <p>Subtotal</p>
+                <p class="grant-total">100</p>
+            </div>
+            <div class="free">
+                <p>Shopping</p>
+                <p>Free</p>
+            </div>
+            <div class="bottom"></div>
+            <div data-cart='{{Id}}' class="checkout-btn cart-checkout">
+                <button class="bottom-btn">CHECKOUT</button>
+            </div>
         </div>
-        <div class="bottom"></div>
-        <div data-cart='{{Id}}' class="checkout-btn cart-checkout">
-            <button class="bottom-btn">CHECKOUT</button>
-        </div> 
-    </div>
     </div>
 </body>
+
 </html>
-
-
-
-
-

@@ -1,8 +1,8 @@
 const dotenv = require('dotenv');
 dotenv.config({ path: './config.env' });
 
-const stripe = require('stripe')('sk_test_51Ki0l3SAJq8NpmmnpxmANEjsEG0ep1sm7fsdpmISOIeOnA2LRkpSqh1aCAt99njikdBXzTDirM0LEE5kAhkMqXr8000QRw38Ny');
-// const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const catchAsync = require('../Util/catchAsync');
 const AppError = require('../Util/appError');
 const handleFactor = require('./handlefactory');
@@ -14,7 +14,8 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
   const cart = await Cart.findById(req.params.cartId);
 
  let verity =cart.products;
-const productDetails = verity.map((el,i)=>{
+ console.log(verity);
+const productDetails = verity.map((el,i)=>{ 
   return({
      name :verity[i].productId.name,
      description : verity[i].productId.description,

@@ -15,19 +15,11 @@ const CartTotal = document.querySelectorAll('.total-each');
 const CartPrice = document.querySelectorAll('.price-each'); 
 const CartQuantity = document.querySelectorAll('.quantityEach'); 
 const grantTotal = document.querySelector('.grant-total');
-const cartBtn = document.querySelector('.cart-checkout');      
-// const adminForm = document.getElementById('admin-form');             
-// const adminName = document.getElementById('admin-name');             
-// const adminCategory = document.getElementById('admin-category');             
-// const adminDescription = document.getElementById('admin-description');             
-// const adminImage = document.getElementById('admin-image');             
-// const adminPrice = document.getElementById('admin-price');             
+const cartBtn = document.querySelector('.cart-checkout');                 
 const productDelete = document.querySelectorAll('.delete-btn');  
 
 
-// const MyCartHandler = document.querySelector('.to-mycart');
 
-// const header = document.querySelector('.header');
 if(loginform)
 document.querySelector('.form').addEventListener('submit', e => {
     e.preventDefault();
@@ -51,40 +43,14 @@ if(deleteItem){
         deleteCartItem(btn.dataset.id);
     }))
 }
-// if(MyCartHandler){
-//     console.log('add to cart');
-//     MyCartHandler.addEventListener('click',e=>{
-//         console.log('clicked');
-//         myCart
-//     }); 
-// }
 
-//Admin ///////////////////////////////
-// if(adminForm){
-//     adminForm.addEventListener('submit',e=>{
-//         e.preventDefault();
-//         const img =adminImage.value.split('\\')[2];
-
-//         const formData ={
-//             name:adminName.value,
-//             category:adminCategory.value, 
-//             description:adminDescription.value,
-//             image:img,
-//             price:adminPrice.value
-//         }
-//         addProduct(formData);
-
-//     })
-  
-// }
- 
 if(productDelete){
     productDelete.forEach(el=> {
         el.addEventListener('click',e=>{
             e.preventDefault();
             const productId =el.dataset.productid
             deleteProduct(productId);
-            console.log(productId);
+            // console.log(productId);
         })
     })
 }
@@ -107,14 +73,6 @@ function getSum(total, num) {
   return total + Math.round(num);
 }
 grantTotal.innerHTML = CartSum;
-// const initialValue = 0;
-// const sumWithInitial = newCartTtl.reduce(
-//   (previousValue, currentValue) => previousValue + currentValue,
-//   initialValue
-// );
-// grantTotal.innerHTML = sumWithInitial;
-
-
 
 //Cart Checkout /////////////////////////////
 
@@ -126,13 +84,3 @@ if(cartBtn)
         deleteAllCart(cartId);
     })
   
-
-//Account ///////////////////////////////////////////////////////
-// window.onload=function(){
-    // document.querySelector('.form').addEventListener('submit',function(e){
-    //     e.preventDefault();
-    //     const email = document.getElementById('email').value;
-    //     const password = document.getElementById('password').value;
-    //     console.log(email);
-    // })
-//   }

@@ -2,9 +2,7 @@
   <div class="hero-img image-fader">
     {{!-- <img src="" class="image1" alt=""> --}}
     <img src="/images/image(1).png" class="image2" alt="">
-    {{!-- <img src="images/image(2).png" class="image2" alt=""> --}}
-    {{!-- <img src="images/services-image (1).png" class="image2" alt=""> --}}
-    {{!-- <img src="images/services-image (1).png" class="image2" alt=""> --}}
+    {{!-- <img src="/images/image(2).png" class="image2" alt=""> --}}
   </div>
   </div>
 </section>
@@ -42,98 +40,91 @@
 </section>
 
 <section class="cards-show">
+  <h2>Best Sellers</h2>
+  <div class="container-card">
+    {{#each products}}
 
-{{!-- <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="..." alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div> --}}
-<h2>Best Sellers</h2>
-<div class="container-card">
-  {{#each products}}
-  
-   <div class="outer">
-     <a href="/api/v1/user/productpage/{{this.slug}}">
-     <div class="img-box">
-      <div class="card-img">
-        <img src="/img/{{this.image}}" class="card-imgs" alt="">
-      </div>
-     </div>
-     </a>
-     <div class="data">
-        <div class="icons">
-        <span class="fa fa-star checked"></span>  
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star"></span>
-        <span class="fa fa-star"></span>
-      </div>
-      <div class="desc">
-        <p>{{this.name}}</p>
-        <p><span>&#8377;</span>{{this.price}}</p>
-      </div>
-      <a href=""  class="addToCart-link">
-      <div data-id="{{this._id}}" class="addto-cart to-cart"><p>Add To Cart</p></div>
+    <div class="outer">
+      <a href="/api/v1/user/productpage/{{this.slug}}">
+        <div class="img-box">
+          <div class="card-img">
+            <img src="/img/{{this.image}}" class="card-imgs" alt="">
+          </div>
+        </div>
       </a>
-       </div>
-   </div>
+      <div class="data">
+        <div class="icons">
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+        </div>
+        <div class="desc">
+          <p>{{this.name}}</p>
+          <p><span>&#8377;</span>{{this.price}}</p>
+        </div>
+        <a href="" class="addToCart-link">
+          <div data-id="{{this._id}}" class="addto-cart to-cart">
+            <p>Add To Cart</p>
+          </div>
+        </a>
+      </div>
+    </div>
 
-   {{/each}}
-</div>
+    {{/each}}
+  </div>
 
 
 
-{{!-- Categories --}}
+  {{!-- Categories --}}
   <h2>Top Categories</h2>
-<div class="card-container">
-  <a class="anchor" href="/api/v1/user/fruits">
-<div class="card" style="width: 16rem;">
-    <p class="card-text">Fruits</p>
-  <img class="card-img-top" src="/images/Grocery.jpg" alt="Card image cap">
-  <div class="card-body">
-     <p class="card-text">sale off</p>
-  </div>
-</div>
-</a>
+  <div class="card-container">
+    <a class="anchor" href="/api/v1/user/fruits">
+      <div class="card" style="width: 16rem;">
+        <p class="card-text">Fruits</p>
+        <img class="card-img-top" src="/images/Grocery.jpg" alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text">sale off</p>
+        </div>
+      </div>
+    </a>
 
- <a class="anchor" href="/api/v1/user/vegitables">
-<div class="card" style="width: 16rem;">
-    <p class="card-text">Vegitables</p>
-  <img class="card-img-top" src="/images/Nutrition.jpg" alt="Card image cap">
-  <div class="card-body">
-     <p class="card-text">sale off</p>
-  </div>
-</div> 
-</a>
+    <a class="anchor" href="/api/v1/user/vegitables">
+      <div class="card" style="width: 16rem;">
+        <p class="card-text">Vegitables</p>
+        <img class="card-img-top" src="/images/Nutrition.jpg" alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text">sale off</p>
+        </div>
+      </div>
+    </a>
 
- <a class="anchor" href="/api/v1/user/sauce">
-<div class="card" style="width: 16rem;">
-    <p class="card-text">Sauces and Oils</p>
-  <img class="card-img-top" src="/images/Drinks.jpg" alt="Card image cap">
-  <div class="card-body">
-     <p class="card-text">sale off</p>
-  </div>
-</div>
-</a>
+    <a class="anchor" href="/api/v1/user/sauce">
+      <div class="card" style="width: 16rem;">
+        <p class="card-text">Sauces and Oils</p>
+        <img class="card-img-top" src="/images/Drinks.jpg" alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text">sale off</p>
+        </div>
+      </div>
+    </a>
 
- <a class="anchor" href="/api/v1/user/house">
-<div class="card" style="width: 16rem;">
-    <p class="card-text">Households supplies</p>
-  <img class="card-img-top" src="/images/Fruits.jpg" alt="Card image cap">
-  <div class="card-body">
-     <p class="card-text">sale off</p>
-  </div>
-</div>
-</a>
+    <a class="anchor" href="/api/v1/user/house">
+      <div class="card" style="width: 16rem;">
+        <p class="card-text">Households supplies</p>
+        <img class="card-img-top" src="/images/Fruits.jpg" alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text">sale off</p>
+        </div>
+      </div>
+    </a>
 
-</div>
+  </div>
 </section>
 
 <section class="banner-tag">
   <div class="banner">
-   <p class="tagline">So fresh, so clean, so bright, it’ll make your mouth water!</p>
+    <p class="tagline">So fresh, so clean, so bright, it’ll make your mouth water!</p>
   </div>
 </section>

@@ -1,14 +1,12 @@
-// type is 'success' or 'error'
 
-
-export const hidealert = ()=>{
+export const hidealert = () => {
     const el = document.querySelector('.alert');
-    if(el) el.parentElement.removeChild(el);
+    if (el) el.parentElement.removeChild(el);
 }
 
-export const Showalert =(type,msg)=>{
+export const Showalert = (type, msg) => {
     hidealert();
     const markup = `<div class="alert alert--${type}">${msg}</div>`;
-    document.querySelector('body').insertAdjacentHTML('afterbegin',markup);
-    window.setTimeout(hidealert,5000);
+    document.querySelector('body').insertAdjacentHTML('afterbegin', markup);
+    window.setTimeout(hidealert, 5000);
 }; 

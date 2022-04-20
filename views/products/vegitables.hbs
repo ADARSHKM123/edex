@@ -33,8 +33,8 @@
                     <div class="each-category">
                         <div class="checkbox-eachone">
                             <a href="#">
-                            <input type="checkbox">
-                            <label for="" class="eachone-field">vegitables</label>
+                                <input type="checkbox">
+                                <label for="" class="eachone-field">vegitables</label>
                             </a>
                         </div>
                         <div class="checkbox-eachone">
@@ -78,8 +78,8 @@
                 </div>
             </div>
             <div class="main-page">
-               
-               {{#each products}}
+
+                {{#each products}}
                 <div class="card-product">
                     <a href="/api/v1/user/productpage/{{this.slug}}">
                         <div class="img-box-inner">
@@ -99,8 +99,8 @@
                         <div class="desc-data">
                             <p>{{this.name}}</p>
                             <p><span>&#8377;</span>{{this.price}}</p>
-                        </div> 
-                        <a href=""  class="addToCart-link-tag">
+                        </div>
+                        <a href="" class="addToCart-link-tag">
                             <div data-id="{{this._id}}" class="addto-cart-bttn to-cart">
                                 <p>Add To Cart</p>
                             </div>

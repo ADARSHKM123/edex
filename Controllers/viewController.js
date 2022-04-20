@@ -1,157 +1,183 @@
 const async = require('hbs/lib/async');
 const catchAsync = require('../Util/catchAsync');
-const Product =require('../Models/productModel');
+const Product = require('../Models/productModel');
 const Cart = require('../Models/cartItemsModel');
 
 
 //Home /////////////////////////////////////
-exports.home = catchAsync(async(req,res,next)=>{
+exports.home = catchAsync(async (req, res, next) => {
   const products = await Product.find();
-const newProduct = products.filter(el=>el.bestseller === true)
-if(req.user){
-  CanLogin=true;
-}else{
-  CanLogin=false;
-}
-  res.status(200).render('index',{admin:false,login:CanLogin,products:newProduct})
+  const newProduct = products.filter(el => el.bestseller === true)
+  if (req.user) {
+    CanLogin = true;
+  } else {
+    CanLogin = false;
+  }
+  res.status(200).render('index', { admin: false, login: CanLogin, products: newProduct })
 });
+
 
 
 //LoginPage //////////////////////////////////
-exports.login = catchAsync(async(req, res, next) => {
-  if(req.user){
-    CanLogin=true;
-  }else{
-    CanLogin=false;
+exports.login = catchAsync(async (req, res, next) => {
+  if (req.user) {
+    CanLogin = true;
+  } else {
+    CanLogin = false;
   }
-    res.status(200).render('users/login',{admin:false,login:CanLogin});
-  });
+  res.status(200).render('users/login', { admin: false, login: CanLogin });
+});
+
+
 
 
 //Product //////////////////////////////////
-exports.product = catchAsync(async(req, res, next) => {
-  const product = await Product.findOne({slug:req.params.slug}).populate({
-    path:'reviews',
-    fields:'review rating user'
-})
-if(req.user){
-  CanLogin=true;
-}else{
-  CanLogin=false;
-}
-    res.status(200).render('products/product',{admin:false,login:CanLogin,product});
-  });
-
-
-  //household Page ////////////////////////////////
-exports.householdpage = catchAsync(async(req, res, next) => {
-  const products = await Product.aggregate([
-    {
-      $match:{ category:{ $eq:'Household'}}
-    }
-  ])
-  res.status(200).render('products/houseappliences',{admin:false,login:true,products});
-});
-
-exports.personalcarepage = catchAsync(async(req, res, next) => {
-  const products = await Product.aggregate([
-    {
-      $match:{ category:{ $eq:'Personal Care'}}
-    }
-  ])
-  res.status(200).render('products/personalcare',{admin:false,login:true,products});
-});
-
-exports.kitchenpage = catchAsync(async(req, res, next) => {
-  const products = await Product.aggregate([
-    {
-      $match:{ category:{ $eq:'kitchen'}}
-    }
-  ])
-  res.status(200).render('products/kitchen',{admin:false,login:true,products});
-});
-
-   
-//Fruit Page ////////////////////////////////
-exports.myaccount = catchAsync(async(req, res, next) => {
-  if(req.user){
-    CanLogin=true;
-  }else{
-    CanLogin=false;
+exports.product = catchAsync(async (req, res, next) => {
+  const product = await Product.findOne({ slug: req.params.slug }).populate({
+    path: 'reviews',
+    fields: 'review rating user'
+  })
+  if (req.user) {
+    CanLogin = true;
+  } else {
+    CanLogin = false;
   }
-  res.status(200).render('users/account',{admin:false,login:CanLogin});
+  res.status(200).render('products/product', { admin: false, login: CanLogin, product });
 });
 
-  
-  
+
+
+
+//household Page ////////////////////////////////
+exports.householdpage = catchAsync(async (req, res, next) => {
+  const products = await Product.aggregate([
+    {
+      $match: { category: { $eq: 'Household' } }
+    }
+  ])
+  res.status(200).render('products/houseappliences', { admin: false, login: true, products });
+});
+
+
+
+//personalcarepage ////////////////////////////////
+exports.personalcarepage = catchAsync(async (req, res, next) => {
+  const products = await Product.aggregate([
+    {
+      $match: { category: { $eq: 'Personal Care' } }
+    }
+  ])
+  res.status(200).render('products/personalcare', { admin: false, login: true, products });
+});
+
+
+
+//kitchenpage ////////////////////////////////
+exports.kitchenpage = catchAsync(async (req, res, next) => {
+  const products = await Product.aggregate([
+    {
+      $match: { category: { $eq: 'kitchen' } }
+    }
+  ])
+  res.status(200).render('products/kitchen', { admin: false, login: true, products });
+});
+
+
+
+
+//Fruit Page ////////////////////////////////
+exports.myaccount = catchAsync(async (req, res, next) => {
+  if (req.user) {
+    CanLogin = true;
+  } else {
+    CanLogin = false;
+  }
+  res.status(200).render('users/account', { admin: false, login: CanLogin });
+});
+
+
+
+
+
 //productPage ////////////////////////////////
-exports.vegitablepage = catchAsync(async(req, res, next) => {
+exports.vegitablepage = catchAsync(async (req, res, next) => {
   const products = await Product.aggregate([
     {
-      $match:{ category:{ $eq:'vegetable'}}
+      $match: { category: { $eq: 'vegetable' } }
     }
   ])
-  
-    res.status(200).render('products/vegitables',{admin:false,login:true,products});
-  });
-  
 
-//Fruit Page ////////////////////////////////
-exports.fruitpage = catchAsync(async(req, res, next) => {
-  const products = await Product.aggregate([
-    {
-      $match:{ category:{ $eq:'fruit'}}
-    }
-  ])
-  res.status(200).render('products/fruits',{admin:false,login:true,products});
+  res.status(200).render('products/vegitables', { admin: false, login: true, products });
 });
 
 
-//Fruit Page ////////////////////////////////
-exports.saucepage = catchAsync(async(req, res, next) => {
-  const products = await Product.aggregate([
-    {
-      $match:{ category:{ $eq:'Sauces & Oils'}}
-    }
-  ])
-  res.status(200).render('products/sauce',{admin:false,login:true,products});
-});
- 
+
 
 
 //Fruit Page ////////////////////////////////
-exports.housepage = catchAsync(async(req, res, next) => {
+exports.fruitpage = catchAsync(async (req, res, next) => {
   const products = await Product.aggregate([
     {
-      $match:{ category:{ $eq:'Household Supplies'}}
+      $match: { category: { $eq: 'fruit' } }
     }
   ])
-  res.status(200).render('products/house',{admin:false,login:true,products});
+  res.status(200).render('products/fruits', { admin: false, login: true, products });
 });
- 
+
+
+
+
+
+//Fruit Page ////////////////////////////////
+exports.saucepage = catchAsync(async (req, res, next) => {
+  const products = await Product.aggregate([
+    {
+      $match: { category: { $eq: 'Sauces & Oils' } }
+    }
+  ])
+  res.status(200).render('products/sauce', { admin: false, login: true, products });
+});
+
+
+
+
+
+
+//Fruit Page ////////////////////////////////
+exports.housepage = catchAsync(async (req, res, next) => {
+  const products = await Product.aggregate([
+    {
+      $match: { category: { $eq: 'Household Supplies' } }
+    }
+  ])
+  res.status(200).render('products/house', { admin: false, login: true, products });
+});
+
+
+
+
 
 
 //Get My Cart /////////////////////////////////////
-
-exports.mycart = catchAsync(async(req, res, next) => {
+exports.mycart = catchAsync(async (req, res, next) => {
   const user = req.user._id;
-    const cartItems = await Cart.findOne({ user: user })
-    if (cartItems === null) {
-      return next(createError("No items in the cart", 400))
-    }
-    const newCart = cartItems.products;
-  const Id =cartItems._id
-  res.status(200).render('users/mycart',{admin:false,login:true,newCart,Id});
+  const cartItems = await Cart.findOne({ user: user })
+  if (cartItems === null) {
+    return next(createError("No items in the cart", 400))
+  }
+  const newCart = cartItems.products;
+  const Id = cartItems._id
+  res.status(200).render('users/mycart', { admin: false, login: true, newCart, Id });
 });
 
- 
+
+
 
 //AddTo Cart////////////////////////////////////////
-
 exports.addToCart = catchAsync(async (req, res, next) => {
   const user = req.user._id;
   if (!req.body.productId) req.body.productId = req.params.productId;
-  if(!req.body.quantity){
+  if (!req.body.quantity) {
     req.body.quantity = 1;
   }
   const { productId, quantity, name, price } = req.body;
@@ -191,5 +217,5 @@ exports.addToCart = catchAsync(async (req, res, next) => {
 
 //////For Admin
 exports.addProduct = catchAsync(async (req, res, next) => {
-  res.status(200).render('admin/admin-addProduct',{admin:true});
+  res.status(200).render('admin/admin-addProduct', { admin: true });
 });   
