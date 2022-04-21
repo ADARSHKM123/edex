@@ -1,6 +1,10 @@
 const express = require('express');
 const bookingController = require('../Controllers/bookingController');
-const authController = require('../controllers/authController');
+<<<<<<< HEAD
+const authController = require('../Controllers/authController');
+=======
+const authController = require('../Controllers/authController');
+>>>>>>> 98af75fe089ae1c2a36d8359c301a83c292ca066
 
 const router = express.Router();
 
