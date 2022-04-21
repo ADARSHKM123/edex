@@ -19,7 +19,7 @@ const productDetails = verity.map((el,i)=>{
   return({
      name :verity[i].productId.name,
      description : verity[i].productId.description,
-     images : [`/img/${verity[i].productId.image}`],
+     images : [`${req.protocol}://${req.get('host')}/img/${verity[i].productId.image}`],
      amount : (verity[i].quantity * verity[i].productId.price)*100,
      currency: 'inr',
      quantity :verity[i].quantity
@@ -29,7 +29,7 @@ const productDetails = verity.map((el,i)=>{
   //2)Create Checkout Session
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ['card'], 
-    success_url: `/api/v1/user`,
+    success_url: `${req.protocol}://${req.get('host')}/api/v1/user`,
     cancel_url: `${req.protocol}://${req.get('host')}/user/mycart`,
     customer_email: req.user.email, 
     client_reference_id: req.params.cartId,
