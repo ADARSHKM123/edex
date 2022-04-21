@@ -1,4 +1,4 @@
-const Review = require('./../models/reviewModel');
+const Review = require('../Models/reviewModel');
 const handle =require('../Controllers/handlefactory');
 
 
