@@ -7,7 +7,7 @@
     "dev": "nodemon ./server",
     "start:prod": "set NODE_ENV=production && nodemon server.js",
     "watch:js": "parcel watch ./public/javascripts/index.js --out-dir ./public/javascripts/ --out-file bundle.js",
-    "build": "parcel build ./public/javascripts/index.js --out-dir ./public/javascripts/ --out-file bundle.js"
+    "build:js": "parcel build ./public/javascripts/index.js --out-dir ./public/javascripts/ --out-file bundle.js"
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
