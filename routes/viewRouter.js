@@ -11,7 +11,7 @@ router.route('/')
 router.route('/login')
     .get(authController.isLoggedIn, viewController.login)
 
-router.use(authController.protect);
+// router.use(authController.protect);
 
 router.route('/productpage/:slug')
     .get(authController.isLoggedIn, viewController.product)
