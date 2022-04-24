@@ -45,7 +45,7 @@ router.route('/house')
     .get(authController.isLoggedIn, viewController.housepage)
 
 router.route('/mycart')
-    .get(viewController.mycart)
+    .get(authController.protect, viewController.mycart)
 
 
 
