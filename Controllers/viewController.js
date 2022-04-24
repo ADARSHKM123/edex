@@ -55,7 +55,12 @@ exports.householdpage = catchAsync(async (req, res, next) => {
       $match: { category: { $eq: 'Household' } }
     }
   ])
-  res.status(200).render('products/houseappliences', { admin: false, login: true, products });
+  if (req.user) {
+    CanLogin = true;
+  } else {
+    CanLogin = false;
+  }
+  res.status(200).render('products/houseappliences', { admin: false, login: CanLogin, products });
 });
 
 
@@ -67,7 +72,12 @@ exports.personalcarepage = catchAsync(async (req, res, next) => {
       $match: { category: { $eq: 'Personal Care' } }
     }
   ])
-  res.status(200).render('products/personalcare', { admin: false, login: true, products });
+   if (req.user) {
+    CanLogin = true;
+  } else {
+    CanLogin = false;
+  }
+  res.status(200).render('products/personalcare', { admin: false, login: CanLogin, products });
 });
 
 
@@ -79,7 +89,12 @@ exports.kitchenpage = catchAsync(async (req, res, next) => {
       $match: { category: { $eq: 'kitchen' } }
     }
   ])
-  res.status(200).render('products/kitchen', { admin: false, login: true, products });
+     if (req.user) {
+    CanLogin = true;
+  } else {
+    CanLogin = false;
+  }
+  res.status(200).render('products/kitchen', { admin: false, login: CanLogin, products });
 });
 
 
@@ -106,8 +121,12 @@ exports.vegitablepage = catchAsync(async (req, res, next) => {
       $match: { category: { $eq: 'vegetable' } }
     }
   ])
-
-  res.status(200).render('products/vegitables', { admin: false, login: true, products });
+    if (req.user) {
+    CanLogin = true;
+  } else {
+    CanLogin = false;
+  }
+  res.status(200).render('products/vegitables', { admin: false, login: CanLogin, products });
 });
 
 
@@ -121,7 +140,12 @@ exports.fruitpage = catchAsync(async (req, res, next) => {
       $match: { category: { $eq: 'fruit' } }
     }
   ])
-  res.status(200).render('products/fruits', { admin: false, login: true, products });
+     if (req.user) {
+    CanLogin = true;
+  } else {
+    CanLogin = false;
+  }
+  res.status(200).render('products/fruits', { admin: false, login: CanLogin, products });
 });
 
 
@@ -135,7 +159,12 @@ exports.saucepage = catchAsync(async (req, res, next) => {
       $match: { category: { $eq: 'Sauces & Oils' } }
     }
   ])
-  res.status(200).render('products/sauce', { admin: false, login: true, products });
+     if (req.user) {
+    CanLogin = true;
+  } else {
+    CanLogin = false;
+  }
+  res.status(200).render('products/sauce', { admin: false, login: CanLogin, products });
 });
 
 
@@ -150,7 +179,12 @@ exports.housepage = catchAsync(async (req, res, next) => {
       $match: { category: { $eq: 'Household Supplies' } }
     }
   ])
-  res.status(200).render('products/house', { admin: false, login: true, products });
+     if (req.user) {
+    CanLogin = true;
+  } else {
+    CanLogin = false;
+  }
+  res.status(200).render('products/house', { admin: false, login: CanLogin, products });
 });
 
 
